@@ -4,6 +4,8 @@
 # LICENSE file in the root directory of this source tree.
 """isort:skip_file"""
 
+print("IN DATA INIT FILE")
+
 from .dictionary import Dictionary, TruncatedDictionary
 
 from .fairseq_dataset import FairseqDataset, FairseqIterableDataset

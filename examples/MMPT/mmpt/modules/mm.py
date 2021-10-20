@@ -25,8 +25,9 @@ try:
         BertEmbeddings,
         ACT2FN,
     )
-except ImportError:
-    pass
+except ImportError as e:
+    print(e)
+#    pass
 
 
 class VideoTokenMLP(nn.Module):

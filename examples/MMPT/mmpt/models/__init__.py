@@ -6,6 +6,8 @@ from .mmfusion import *
 from .transformermodel import *
 from .mmfusionnlg import *
 
+print("IN MMPT MODELS INIT FILE")
+
 try:
     from .fairseqmmmodel import *
 except ImportError:

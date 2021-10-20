@@ -21,9 +21,12 @@ def setup_registry(registry_name: str, base_class=None, default=None, required=F
     REGISTRY = {}
     REGISTRY_CLASS_NAMES = set()
     DATACLASS_REGISTRY = {}
+    print(REGISTRIES)
+    print("Registry name is: " + registry_name)
 
     # maintain a registry of all registries
     if registry_name in REGISTRIES:
+        print("ALREADY IN REGISTRY!")
         return  # registry already exists
     REGISTRIES[registry_name] = {
         "registry": REGISTRY,

@@ -14,15 +14,20 @@ from fairseq.criterions.fairseq_criterion import (  # noqa
 )
 from omegaconf import DictConfig
 
+print("RUNNING CRITERION INIT FILE")
 
-(
-    build_criterion_,
+try:
+    print("Attempting to register criterion")
+    (build_criterion_,
     register_criterion,
     CRITERION_REGISTRY,
     CRITERION_DATACLASS_REGISTRY,
-) = registry.setup_registry(
+    ) = registry.setup_registry(
     "--criterion", base_class=FairseqCriterion, default="cross_entropy"
-)
+    )
+except Exception as e:
+    print(e)
+    print("Criterion is already registered")
 
 
 def build_criterion(cfg: DictConfig, task):

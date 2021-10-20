@@ -27,6 +27,8 @@ except ImportError:
 
 from . import transformermodel
 
+print("IN MMPTModel Class FILE")
+
 
 class MMPTModel(nn.Module):
     """An e2e wrapper of inference model.
