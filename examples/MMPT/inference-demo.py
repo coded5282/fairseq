@@ -13,3 +13,5 @@ caps, cmasks = caps[None, :], cmasks[None, :]
 with torch.no_grad():
     output = model(video_frames, caps, cmasks, return_score=True)
 print(output["score"])
+
+print("Finished running demo!")
