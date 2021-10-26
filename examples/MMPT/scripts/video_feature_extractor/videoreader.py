@@ -69,7 +69,8 @@ class VideoLoader(Dataset):
         if not(os.path.isfile(output_file)) and os.path.isfile(video_path):
             try:
                 h, w = self._get_video_dim(video_path)
-            except Exception:
+            except Exception as e:
+                print('EXCEPTION MESSAGE: ' + str(e))
                 print('ffprobe failed at: {}'.format(video_path))
                 return {'video': th.zeros(1), 'input': video_path,
                         'output': output_file}

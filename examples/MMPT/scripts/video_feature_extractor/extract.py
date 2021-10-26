@@ -99,6 +99,7 @@ loader = DataLoader(
     num_workers=args.num_decoding_thread,
     sampler=sampler if n_dataset > 10 else None,
 )
+breakpoint()
 preprocess = Preprocessing(args.type)
 model = get_model(args)
 
@@ -106,6 +107,7 @@ with th.no_grad():
     for k, data in tqdm(enumerate(loader), total=loader.__len__(), ascii=True):
         input_file = data['input'][0]
         output_file = data['output'][0]
+        print("Video shape: " + str(data['video'].shape))
         if len(data['video'].shape) > 3:
             video = data['video'].squeeze()
             if len(video.shape) == 4:

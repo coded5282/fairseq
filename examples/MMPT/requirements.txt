@@ -1,3 +1,6 @@
 omegaconf==2.0.6
 transformers==3.4
 youtube-dl
+pandas
+ffmpeg-python
+ffprobe-python
