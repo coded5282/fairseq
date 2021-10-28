@@ -107,7 +107,9 @@ class VideoLoader(Dataset):
         if self.centercrop and isinstance(self.size, int):
             height, width = self.size, self.size
         video = np.frombuffer(out, np.uint8).reshape([-1, height, width, 3])
-        video = th.from_numpy(video.astype('float32'))
+#        video = th.from_numpy(video.astype('float32'))
+        video = th.from_numpy(video.astype('float16'))
+        print("Finished converting one video in video reader !!!!!!!!!!")
         return video.permute(0, 3, 1, 2)
 
 

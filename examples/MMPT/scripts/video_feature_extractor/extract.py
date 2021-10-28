@@ -29,7 +29,7 @@ parser.add_argument('--type', type=str, default='2d',
                             help='CNN type')
 parser.add_argument('--half_precision', type=int, default=0,
                             help='output half precision float')
-parser.add_argument('--num_decoding_thread', type=int, default=4,
+parser.add_argument('--num_decoding_thread', type=int, default=0,
                             help='Num parallel thread for video decoding')
 parser.add_argument('--l2_normalize', type=int, default=1,
                             help='l2 normalize feature')
@@ -99,12 +99,16 @@ loader = DataLoader(
     num_workers=args.num_decoding_thread,
     sampler=sampler if n_dataset > 10 else None,
 )
+print("RIGHT BEFORE FIRST BREAKPOINT")
 breakpoint()
 preprocess = Preprocessing(args.type)
 model = get_model(args)
-
+print("RIGHT BEFORE SECOND BREAKPOINT")
+breakpoint()
 with th.no_grad():
     for k, data in tqdm(enumerate(loader), total=loader.__len__(), ascii=True):
+        print("RIGHT BEFORE THIRD BREAKPOINT")
+        breakpoint()
         input_file = data['input'][0]
         output_file = data['output'][0]
         print("Video shape: " + str(data['video'].shape))
