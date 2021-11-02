@@ -25,6 +25,12 @@ class VectorRetriever(object):
     """
 
     def __init__(self, hidden_size, cent, db_type, examples_per_cent_to_train):
+        print("HIDDEN SIZE: {}".format(str(hidden_size)))
+        print("CENT: {}".format(cent))
+        print("DB TYPE: {}".format(db_type))
+        print("EX PER CENT TO TRAIN: {}".format(examples_per_cent_to_train))
+        # changing cent to lower number
+        cent = 12
         if db_type == "flatl2":
             quantizer = faiss.IndexFlatL2(hidden_size)  # the other index
             self.db = faiss.IndexIVFFlat(
@@ -70,6 +76,11 @@ class VectorRetriever(object):
             self.videoid_to_vectoridx = pickle.load(fr)
 
     def add(self, hidden_states, video_ids, last=False):
+        print("PASSED TO ADD FUNCTION")
+        print(hidden_states)
+        print("JUST FINISHED HIDDEN STATES AND NOW VIDEO IDS")
+        print(video_ids)
+        print("JUST FINISHED VIDEO IDS")
         assert len(hidden_states) == len(video_ids), "{}, {}".format(
             str(len(hidden_states)), str(len(video_ids)))
         assert len(hidden_states.shape) == 2
@@ -84,6 +95,7 @@ class VectorRetriever(object):
 
         hidden_states = hidden_states[valid_idx]
         if not self.db.is_trained:
+            print("SELF.TRAIN_LEN IS NOW: {}".format(str(self.train_len)))
             self.train_cache.append(hidden_states)
             self.train_len += hidden_states.shape[0]
             if self.train_len < self.train_thres:

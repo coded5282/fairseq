@@ -107,8 +107,6 @@ print("RIGHT BEFORE SECOND BREAKPOINT")
 breakpoint()
 with th.no_grad():
     for k, data in tqdm(enumerate(loader), total=loader.__len__(), ascii=True):
-        print("RIGHT BEFORE THIRD BREAKPOINT")
-        breakpoint()
         input_file = data['input'][0]
         output_file = data['output'][0]
         print("Video shape: " + str(data['video'].shape))
@@ -137,6 +135,13 @@ with th.no_grad():
                     if args.type == '2d':
                         batch_features = model(video_batch) # (51, 487), (51, 512)
                     elif args.type == 's3d':
+                        if not video_batch.is_cuda:
+                            device = th.device("cuda:0" if th.cuda.is_available() else "cpu")
+                            video_batch = video_batch.to(device)
+                            print("Converted video batch to cuda!")
+                        if video_batch.dtype == th.float16:
+                            video_batch = video_batch.type(th.cuda.FloatTensor)
+                            print("Converted video batch to FloatTensor")
                         batch_features = model(video_batch)
                         batch_features = batch_features['video_embedding']
                     elif args.type == "vae":

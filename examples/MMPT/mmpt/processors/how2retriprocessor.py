@@ -20,6 +20,12 @@ class ShardedHow2VideoRetriMetaProcessor(ShardedHow2MetaProcessor):
             self.data[batch_offset:batch_offset + self.num_video_per_batch]
             for batch_offset in
             range(0, (len(self.data) // (8 * self.num_video_per_batch)) * 8 * self.num_video_per_batch, self.num_video_per_batch)]
+        print("PRINTING SELF DATA")
+        print(self.data)
+        print("FINISHED PRINTING SELF DATA")
+        print("PRINTING SELF CANDS")
+        print(self.cands)
+        print("FINISHED PRINTING SELF CANDS")
 
     def __len__(self):
         return len(self.cands)
@@ -90,6 +96,7 @@ class VideoRetriOverlappedAligner(OverlappedAligner):
         batch, video_ids = [], []
         for video_id, video_feature, text_feature in \
                 zip(sharded_video_idxs, video_features, text_features):
+            print("IN ALIGNER: " + str(video_id))
             sub_batch = super().__call__(video_id, video_feature, text_feature)
             batch.append(sub_batch)
             if isinstance(video_id, tuple):

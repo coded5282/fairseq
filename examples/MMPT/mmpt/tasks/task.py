@@ -56,14 +56,18 @@ class Task(object):
             self.config.dataset.split = "train"
             # may be used by meta processor.
             # meta_processor controls different dataset.
+            print("IN TRAIN SPLIT HERE @@@@@@")
             meta_processor = meta_processor_cls(self.config.dataset)
+            print(meta_processor.video_id_to_shard)
             video_processor = video_processor_cls(self.config.dataset)
+            print(video_processor.vfeat_dir)
             text_processor = text_processor_cls(self.config.dataset)
             aligner = aligner_cls(self.config.dataset)
             self.train_data = MMDataset(
                 meta_processor, video_processor, text_processor, aligner
             )
             print("train_len", len(self.train_data))
+            print("JUST PRINTED METAPROCESSOR LENGTH")
             output = self.train_data[0]
             self.train_data.print_example(output)
         if self.config.dataset.val_path is not None:

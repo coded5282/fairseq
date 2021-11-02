@@ -19,7 +19,7 @@ dataset:
   mm_prob: 0.5
   sampled_video_min_len: 3
   sampled_video_max_len: 32
-  num_video_per_batch: 32
+  num_video_per_batch: 1
   clip_per_video: 16
 fairseq:
   common:
@@ -27,7 +27,7 @@ fairseq:
     log_interval: 1000
     fp16: true
   dataset:
-    num_workers: 4
+    num_workers: 0
     batch_size: 1
   optimization:
     lr:
