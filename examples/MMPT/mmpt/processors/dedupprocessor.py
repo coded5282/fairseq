@@ -76,8 +76,11 @@ class CaptionDedupProcessor(object):
             pickle.dump(self.data, fw, pickle.HIGHEST_PROTOCOL)
 
     def save_stat(self, video_id, caption):
+        #video_fn = os.path.join(
+        #    "data/feat/feat_how2_s3d", video_id + ".npy"
+        #)
         video_fn = os.path.join(
-            "data/feat/feat_how2_s3d", video_id + ".npy"
+            "data/youtube-jomi-dataset/feat/feat_how2_s3d", video_id + ".npy"
         )
         if os.path.isfile(video_fn):
             with open(video_fn, "rb", 1) as fr:  # 24 is the buffer size. buffered
@@ -211,10 +214,12 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="dedup how2 caption")
-    parser.add_argument('--how2dir', default="data/how2")
+    #parser.add_argument('--how2dir', default="data/how2")
+    parser.add_argument('--how2dir', default="data/youtube-jomi-dataset")
     args = parser.parse_args()
 
-    raw_caption_json = os.path.join(args.how2dir, "raw_caption.json")
+    #raw_caption_json = os.path.join(args.how2dir, "raw_caption.json")
+    raw_caption_json = os.path.join(args.how2dir, "raw_caption_jomi.json")
     raw_caption_pickle = os.path.join(args.how2dir, "raw_caption.pkl")
     raw_caption_dedup_pickle = os.path.join(args.how2dir, "raw_caption_dedup.pkl")
 

@@ -54,11 +54,18 @@ class Shard(object):
 
 
 if __name__ == "__main__":
+    #shard = Shard(
+    #    "data/feat/feat_how2_s3d",
+    #    "data/how2/raw_caption_dedup.bert-base-uncased",
+    #    "data/feat/feat_how2_s3d_shard_small",
+    #    ["data/how2/how2_s3d_train.lst", "data/how2/how2_s3d_val.lst"]
+    #)
+
     shard = Shard(
-        "data/feat/feat_how2_s3d",
-        "data/how2/raw_caption_dedup.bert-base-uncased",
-        "data/feat/feat_how2_s3d_shard_small",
-        ["data/how2/how2_s3d_train.lst", "data/how2/how2_s3d_val.lst"]
+            "data/youtube-jomi-dataset/feat/feat_how2_s3d",
+            "data/youtube-jomi-dataset/raw_caption_dedup.bert-base-uncased",
+            "data/youtube-jomi-dataset/feat/feat_how2_s3d_shard_small",
+            ["data/youtube-jomi-dataset/how2_s3d_train.lst", "data/youtube-jomi-dataset/how2_s3d_val.lst"]
     )
 
     shard()
