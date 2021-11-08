@@ -3,12 +3,12 @@ task_type: local_predict
 dataset:
   split: test
   video_processor: VideoProcessor
-  aligner: COINActionSegmentationAligner
+  aligner: YTJActionSegmentationAligner
   bert_name: bert-base-uncased
-  test_path: data/coin/COIN_match_new.json
-  meta_processor: COINActionSegmentationMetaProcessor
-  vfeat_dir: data/coin/feat/feat_how2_s3d
-  text_processor: COINActionSegmentationTextProcessor
+  test_path: data/open-surgery-yt/surgery_action_labels.json
+  meta_processor: YTJActionSegmentationMetaProcessor
+  vfeat_dir: data/open-surgery-yt/feat/feat_how2_s3d
+  text_processor: YTJActionSegmentationTextProcessor
   num_iso_layer: 12
   sliding_window: 16
   sliding_window_size: 32
@@ -20,7 +20,7 @@ fairseq:
     valid_subset: test
     num_workers: 2
   common_eval:
-    path: runs/retri/videoclip/checkpoint_best.pt
+    path: runs/retri/videoclip/pretrained_videoclip/checkpoint_best.pt
 model:
   model_cls: MMFusionSeparate
   mm_encoder_cls: null
@@ -28,6 +28,6 @@ model:
   text_encoder_cls: BertModel
   num_hidden_video_layers: 6
 eval:
-  save_path: runs/retri/videoclip/coin_zs/eval
+  save_path: runs/retri/videoclip/open_surgery_yt_zs/eval
 metric: COINActionSegmentationMetric
 predictor: COINZSPredictor

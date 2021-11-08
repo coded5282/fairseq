@@ -804,6 +804,181 @@ class COINActionSegmentationAligner(Aligner):
             "video_targets": video_targets
         }
 
+# --------------------- YouTube JOMI Dataset -------------------- #
+
+class YTJMetaTextBinarizer(Aligner):
+    def __call__(self, text_feature):
+        text_feature = {
+            "cap": [text_feature],
+            "start": [0.],
+            "end": [100.],
+        }
+        text_clip_indexs = [0]
+
+        caps, cmasks = self._build_text_seq(
+            text_feature, text_clip_indexs
+        )
+        return {"caps": caps, "cmasks": cmasks}
+
+
+class YTJActionSegmentationMetaProcessor(MetaProcessor):
+    split_map = {
+        "train": "training",
+        "valid": "testing",
+        "test": "testing",
+    }
+
+    id_label_map = {
+            1: "background",
+            2: "tying",
+            3: "suturing",
+            4: "cutting",
+    }
+
+    label_id_map = {
+            "background": 1,
+            "tying": 2,
+            "suturing": 3,
+            "cutting": 4,
+    }
+
+    def __init__(self, config):
+        super().__init__(config)
+        with open(self._get_split_path(config)) as fr:
+            database = json.load(fr)
+        id2label = {}
+        data = []
+        # filter the data by split.
+#        for video_id, rec in database.items():
+            # always use testing to determine label_set
+#            if rec["subset"] == "testing":
+#                for segment in rec["annotation"]:
+#                    id2label[int(segment["id"])] = segment["label"]
+        # text_labels is used for ZS setting
+#        self.text_labels = ["none"] * len(id2label)
+        self.text_labels = ["none"] * len(YTJActionSegmentationMetaProcessor.id_label_map)
+#        for label_id in id2label:
+#            self.text_labels[label_id-1] = id2label[label_id]
+        for label_id in YTJActionSegmentationMetaProcessor.id_label_map:
+            self.text_labels[label_id-1] = YTJActionSegmentationMetaProcessor.id_label_map[label_id]
+
+#        id2label[0] = "O"
+        YTJActionSegmentationMetaProcessor.id_label_map[0] = "O"
+#        print("num of labels", len(id2label))
+        print("num of labels", len(YTJActionSegmentationMetaProcessor.id_label_map))
+
+        for video_id, rec in database.items():
+            print("VIDEO ID: {}".format(str(video_id)))
+            if not os.path.isfile(os.path.join(config.vfeat_dir, video_id + ".npy")):
+                continue
+#            if rec["subset"] == YTJActionSegmentationMetaProcessor.split_map[self.split]:
+            starts, ends, labels = [], [], []
+#            for segment in rec["annotation"]:
+            for segment in rec:
+                start, end = int(float(segment["start"])), int(float(segment["end"]))
+#                label = int(segment["id"])
+                try:
+                    label = int(YTJActionSegmentationMetaProcessor.label_id_map[segment["label"]])
+                except Exception as e:
+                    print(e)
+                    label = int(YTJActionSegmentationMetaProcessor.label_id_map["background"])
+                starts.append(start)
+                ends.append(end)
+                labels.append(label)
+            data.append(
+                (video_id, {"start": starts, "end": ends, "label": labels}))
+        self.data = data
+
+    def meta_text_labels(self, config):
+        from transformers import default_data_collator
+        from ..utils import get_local_rank
+
+        text_processor = TextProcessor(config)
+        binarizer = YTJMetaTextBinarizer(config)
+        # TODO: add prompts to .yaml.
+        text_labels = [label for label in self.text_labels]
+
+        if get_local_rank() == 0:
+            print(text_labels)
+
+        outputs = []
+        for text_label in text_labels:
+            text_feature = text_processor(text_label)
+            outputs.append(binarizer(text_feature))
+        return default_data_collator(outputs)
+
+    def __getitem__(self, idx):
+        return self.data[idx]
+
+
+class YTJActionSegmentationTextProcessor(TextProcessor):
+    def __call__(self, text_label):
+        return text_label
+
+
+class YTJActionSegmentationAligner(Aligner):
+    def __init__(self, config):
+        super().__init__(config)
+        self.sliding_window = config.sliding_window
+        self.sliding_window_size = config.sliding_window_size
+
+    def __call__(self, video_id, video_feature, text_feature):
+        starts, ends, label_ids = text_feature["start"], text_feature["end"], text_feature["label"]
+        # sliding window.
+        video_len = len(video_feature)
+
+        vfeats, vmasks, targets = [], [], []
+        # sliding window on video features and targets.
+        for window_start in range(0, video_len, self.sliding_window):
+            video_start = 0
+            video_end = min(video_len - window_start, self.sliding_window_size)
+            video_clip = {"start": [video_start], "end": [video_end]}
+            vfeat, vmask = self._build_video_seq(
+                video_feature[window_start: window_start + video_end],
+                video_clip
+            )
+            # covers video length only.
+            target = torch.full_like(vmask, -100, dtype=torch.long)
+            target[vmask] = 0
+            for start, end, label_id in zip(starts, ends, label_ids):
+                if (window_start < end) and (start < (window_start + video_end)):
+                    start_offset = max(0, math.floor(start) - window_start)
+                    end_offset = min(video_end, math.ceil(end) - window_start)
+                    target[start_offset:end_offset] = label_id
+            vfeats.append(vfeat)
+            vmasks.append(vmask)
+            targets.append(target)
+            if (video_len - window_start) <= self.sliding_window_size:
+                break
+
+        vfeats = torch.stack(vfeats)
+        vmasks = torch.stack(vmasks)
+        targets = torch.stack(targets)
+        video_targets = torch.full((video_len,), 0)
+        for start, end, label_id in zip(starts, ends, label_ids):
+            start_offset = max(0, math.floor(start))
+            end_offset = min(video_len, math.ceil(end))
+            video_targets[start_offset:end_offset] = label_id
+
+        caps = torch.LongTensor(
+            [[self.cls_token_id, self.sep_token_id,
+              self.pad_token_id, self.sep_token_id]],
+            ).repeat(vfeats.size(0), 1)
+        cmasks = torch.BoolTensor(
+            [[0, 1, 0, 1]]  # pad are valid for attention.
+            ).repeat(vfeats.size(0), 1)
+        return {
+            "caps": caps,
+            "cmasks": cmasks,
+            "vfeats": vfeats,  # X for original code.
+            "vmasks": vmasks,
+            "targets": targets,
+            "video_id": video_id,
+            "video_len": video_len,  # for later checking.
+            "video_targets": video_targets
+        }
+
+
 
 class DiDeMoMetaProcessor(MetaProcessor):
     """reference: https://github.com/LisaAnne/LocalizingMoments/blob/master/utils/eval.py
