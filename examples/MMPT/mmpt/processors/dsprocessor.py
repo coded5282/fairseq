@@ -829,17 +829,15 @@ class YTJActionSegmentationMetaProcessor(MetaProcessor):
     }
 
     id_label_map = {
-            1: "background",
-            2: "tying",
-            3: "suturing",
-            4: "cutting",
+            1: "tying",
+            2: "suturing",
+            3: "cutting",
     }
 
     label_id_map = {
-            "background": 1,
-            "tying": 2,
-            "suturing": 3,
-            "cutting": 4,
+            "tying": 1,
+            "suturing": 2,
+            "cutting": 3,
     }
 
     def __init__(self, config):
@@ -924,6 +922,7 @@ class YTJActionSegmentationAligner(Aligner):
 
     def __call__(self, video_id, video_feature, text_feature):
         starts, ends, label_ids = text_feature["start"], text_feature["end"], text_feature["label"]
+
         # sliding window.
         video_len = len(video_feature)
 
@@ -954,11 +953,15 @@ class YTJActionSegmentationAligner(Aligner):
         vfeats = torch.stack(vfeats)
         vmasks = torch.stack(vmasks)
         targets = torch.stack(targets)
+        print("Targets")
+        print(torch.unique(targets))
         video_targets = torch.full((video_len,), 0)
         for start, end, label_id in zip(starts, ends, label_ids):
             start_offset = max(0, math.floor(start))
             end_offset = min(video_len, math.ceil(end))
             video_targets[start_offset:end_offset] = label_id
+        print("Video Targets")
+        print(torch.unique(video_targets))
 
         caps = torch.LongTensor(
             [[self.cls_token_id, self.sep_token_id,

@@ -5,6 +5,7 @@
 
 import numpy as np
 import json
+from collections import Counter
 
 
 class Metric(object):
@@ -210,6 +211,12 @@ class COINActionSegmentationMetric(Metric):
         n_errors = 0
         n_errors = sum(outputs != targets)
         n_frames = len(targets)
+        print("N_FRAMES: {}".format(str(n_frames)))
+        print("N_ERRORS: {}".format(str(n_errors)))
+        print("TARGETS: ")
+        print(Counter(targets))
+        print("OUTPUTS: ")
+        print(Counter(outputs))
         return {"frame_acc": 1.0 - float(n_errors) / n_frames}
 
     def print_computed_metrics(self, metrics):
