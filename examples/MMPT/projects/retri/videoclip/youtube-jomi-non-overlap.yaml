@@ -7,7 +7,7 @@ dataset:
   vfeat_dir: data/youtube-jomi-dataset/feat/feat_how2_s3d_shard_small
   text_processor: ShardedVideoRetriTextProcessor
   tfeat_dir: data/youtube-jomi-dataset/feat/feat_how2_s3d_shard_small/raw_caption_dedup.bert-base-uncased.
-  aligner: VideoRetriOverlappedAligner
+  aligner: VideoRetriAligner
   subsampling: 1
   sampled_min_len: 8
   sampled_max_len: 64

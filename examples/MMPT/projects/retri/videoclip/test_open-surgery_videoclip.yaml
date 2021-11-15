@@ -20,14 +20,14 @@ fairseq:
     valid_subset: test
     num_workers: 2
   common_eval:
-    path: runs/retri/youtube-jomi-tuning-batch-inc/checkpoint_last.pt
+    path: runs/retri/youtube-jomi/open-surgery-yt/checkpoint_best.pt
 model:
-  model_cls: MMFusionSeparate
+  model_cls: MMFusionSeparateActionSegmentation
   mm_encoder_cls: null
-  video_encoder_cls: MMBertForEncoder
+  video_encoder_cls: MMBertForTokenClassification
   text_encoder_cls: BertModel
   num_hidden_video_layers: 6
 eval:
-  save_path: runs/retri/videoclip/open_surgery_yt_zs/eval
+  save_path: runs/retri/videoclip/open_surgery_yt/eval
 metric: COINActionSegmentationMetric
-predictor: COINZSPredictor
+predictor: COINPredictor

@@ -1,12 +1,12 @@
 dataset:
   video_processor: VideoProcessor
   bert_name: bert-base-uncased
-  meta_processor: COINActionSegmentationMetaProcessor
-  train_path: data/coin/COIN_match_new.json
-  val_path: data/coin/COIN_match_new.json
-  vfeat_dir: data/coin/feat/feat_how2_s3d
-  text_processor: COINActionSegmentationTextProcessor
-  aligner: COINActionSegmentationAligner
+  meta_processor: YTJActionSegmentationMetaProcessor
+  train_path: data/open-surgery-yt/surgery_action_labels_filtered.json
+  val_path: data/open-surgery-yt/surgery_action_labels_filtered.json
+  vfeat_dir: data/open-surgery-yt/feat/feat_how2_s3d
+  text_processor: YTJActionSegmentationTextProcessor
+  aligner: YTJActionSegmentationAligner
   num_iso_layer: 12
   sliding_window: 8
   sliding_window_size: 32
@@ -33,11 +33,11 @@ fairseq:
     ddp_backend: no_c10d
     max_epoch: 8
   checkpoint:
-    restore_file: runs/retri/videoclip/checkpoint_best.pt
+    restore_file: runs/retri/youtube-jomi/checkpoint_best.pt
     reset_optimizer: true
     reset_dataloader: true
     reset_meters: true
-    save_dir: runs/retri/videoclip/coin
+    save_dir: runs/retri/youtube-jomi/open-surgery-yt
 task_type: sweep_big
 model:
   model_cls: MMFusionSeparateActionSegmentation

@@ -58,9 +58,9 @@ class Task(object):
             # meta_processor controls different dataset.
             print("IN TRAIN SPLIT HERE @@@@@@")
             meta_processor = meta_processor_cls(self.config.dataset)
-            print(meta_processor.video_id_to_shard)
+#            print(meta_processor.video_id_to_shard)
             video_processor = video_processor_cls(self.config.dataset)
-            print(video_processor.vfeat_dir)
+#            print(video_processor.vfeat_dir)
             text_processor = text_processor_cls(self.config.dataset)
             aligner = aligner_cls(self.config.dataset)
             self.train_data = MMDataset(

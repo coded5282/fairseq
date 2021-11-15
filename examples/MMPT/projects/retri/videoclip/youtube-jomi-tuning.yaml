@@ -19,8 +19,8 @@ dataset:
   mm_prob: 0.5
   sampled_video_min_len: 3
   sampled_video_max_len: 32
-  num_video_per_batch: 1
-  clip_per_video: 16
+  num_video_per_batch: 3
+  clip_per_video: 20
 fairseq:
   common:
     tensorboard_logdir: run
@@ -40,16 +40,16 @@ fairseq:
     warmup_updates: 1000
     weight_decay: 0.0
     ddp_backend: no_c10d
-    max_epoch: 25
+    max_epoch: 50
   checkpoint:
-    save_dir: runs/retri/youtube-jomi-non-overlap
+    save_dir: runs/retri/youtube-jomi-tuning-batch-inc-2
     save_interval_updates: 1024
     keep_interval_updates: 2
     keep_last_epochs: 30
 task_type: sweep_big
 slurm_config: big
 eval:
-  save_path: runs/retri/youtube-jomi-non-overlap
+  save_path: runs/retri/youtube-jomi-tuning-batch-inc-2
 model:
   model_cls: MMFusionSeparate
   mm_encoder_cls: null
