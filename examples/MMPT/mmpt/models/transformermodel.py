@@ -90,7 +90,7 @@ class MMBertForTokenClassification(BertPreTrainedModel):
         self.bert = MMBertModel(config)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         # TODO(huxu): 779 is the number of classes for COIN: move to config?
-        self.classifier = nn.Linear(config.hidden_size, 779)
+        self.classifier = nn.Linear(config.hidden_size, 4)
         self.init_weights()
 
     def forward(

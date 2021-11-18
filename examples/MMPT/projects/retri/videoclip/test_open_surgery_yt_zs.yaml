@@ -5,9 +5,9 @@ dataset:
   video_processor: VideoProcessor
   aligner: YTJActionSegmentationAligner
   bert_name: bert-base-uncased
-  test_path: data/open-surgery-yt/surgery_action_labels_filtered.json
+  test_path: data/open-surgery-yt/surgery_action_labels_filtered_for_ft.json
   meta_processor: YTJActionSegmentationMetaProcessor
-  vfeat_dir: data/open-surgery-yt/feat/feat_how2_s3d
+  vfeat_dir: data/open-surgery-yt/feat/feat_surgery_videos_temp_s3d
   text_processor: YTJActionSegmentationTextProcessor
   num_iso_layer: 12
   sliding_window: 16
@@ -20,7 +20,7 @@ fairseq:
     valid_subset: test
     num_workers: 2
   common_eval:
-    path: runs/retri/youtube-jomi-tuning-batch-inc/checkpoint_last.pt
+    path: runs/retri/youtube-jomi/checkpoint_best.pt
 model:
   model_cls: MMFusionSeparate
   mm_encoder_cls: null

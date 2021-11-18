@@ -5,3 +5,4 @@ pandas
 ffmpeg-python
 ffprobe-python
 faiss-cpu
+seaborn

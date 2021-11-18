@@ -6,6 +6,7 @@
 import numpy as np
 import json
 from collections import Counter
+from sklearn import metrics
 
 
 class Metric(object):
@@ -217,6 +218,7 @@ class COINActionSegmentationMetric(Metric):
         print(Counter(targets))
         print("OUTPUTS: ")
         print(Counter(outputs))
+        print(metrics.classification_report(targets, outputs, digits=3))
         return {"frame_acc": 1.0 - float(n_errors) / n_frames}
 
     def print_computed_metrics(self, metrics):

@@ -11,6 +11,7 @@ import pickle
 import math
 
 from tqdm import tqdm
+from sklearn.metrics import classification_report
 
 
 class Predictor(object):
@@ -375,10 +376,19 @@ class COINPredictor(Predictor):
     def __call__(self, sample, model, Y_pred, Y_true):
         sample = self.to_ctx(sample)
         # compute the average logits over sliding windows.
+        print("VIDEO ID:")
+        print(sample["video_id"])
         output = model(**sample)
         logits = self._merge_windows(sample, output)
         Y_pred.append(logits.argmax(dim=1))
         Y_true.append(sample["video_targets"].squeeze(0).cpu())
+        logits_output = logits.argmax(dim=1)
+        true_output = sample["video_targets"].squeeze(0).cpu()
+        n_errors = sum(logits_output != true_output)
+        n_total = len(true_output)
+        print("Frame accuracy:")
+        print(((1-(n_errors/n_total)).item()))
+        print(classification_report(true_output, logits_output, digits=3))
 
     def _merge_windows(self, sample, output):
         targets = sample["targets"].reshape(-1).cpu()
@@ -491,6 +501,11 @@ class COINZSPredictor(COINPredictor):
 
         Y_pred.append(pred)
         Y_true.append(sample["video_targets"].squeeze(0).cpu())
+        n_errors = sum(pred != (sample['video_targets'].squeeze(0).cpu()))
+        n_total = len(pred)
+        print("VIDEO ID: {}".format(sample['video_id']))
+        print("Frame accuracy: {}".format(str((1-(n_errors/n_total)).item())))
+        print(classification_report(sample['video_targets'].squeeze(0).cpu(), pred, digits=3))
 
     def finalize(self, Y_pred, Y_true, output_file=None):
         Y_pred = torch.cat(Y_pred, dim=0).numpy()
