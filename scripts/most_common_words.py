@@ -39,7 +39,7 @@ print("Most common nouns")
 print(fdist_nouns.most_common())
 noun_words = [noun_pair[0] for noun_pair in fdist_nouns.most_common()]
 noun_counts = [noun_pair[1] for noun_pair in fdist_nouns.most_common()]
-sns.barplot(noun_counts[:30], noun_words[:30], x='frequency', y='word')
+sns.barplot(noun_counts[:45], noun_words[:45], x='frequency', y='word')
 plt.savefig('../examples/MMPT/data/youtube-jomi-dataset/noun_counts.png')
 
 print("Most common verbs")
@@ -47,5 +47,5 @@ print(fdist_verbs.most_common())
 
 verb_words = [verb_pair[0] for verb_pair in fdist_verbs.most_common()]
 verb_counts = [verb_pair[1] for verb_pair in fdist_verbs.most_common()]
-sns.barplot(verb_counts[:30], verb_words[:30], x='frequency', y='word')
+sns.barplot(verb_counts[:45], verb_words[:45], x='frequency', y='word')
 plt.savefig('../examples/MMPT/data/youtube-jomi-dataset/verb_counts.png')
