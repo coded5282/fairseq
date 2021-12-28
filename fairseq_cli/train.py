@@ -52,6 +52,8 @@ def main(cfg: FairseqConfig) -> None:
 
     utils.import_user_module(cfg.common)
 
+    print("CFG DISTRIBUTED TRAINING VALUE: {}".format(str(cfg.distributed_training)))
+
     if distributed_utils.is_master(cfg.distributed_training) and "job_logging_cfg" in cfg:
         # make hydra logging work with ddp (see # see https://github.com/facebookresearch/hydra/issues/1126)
         logging.config.dictConfig(OmegaConf.to_container(cfg.job_logging_cfg))
@@ -167,6 +169,10 @@ def main(cfg: FairseqConfig) -> None:
 
     train_meter = meters.StopwatchMeter()
     train_meter.start()
+
+    #checkpoint_utils.save_checkpoint(
+    #    cfg.checkpoint, trainer, epoch_itr, valid_losses[0]
+    #)
     while epoch_itr.next_epoch_idx <= max_epoch:
         if lr <= cfg.optimization.stop_min_lr:
             logger.info(

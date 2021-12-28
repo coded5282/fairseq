@@ -6,3 +6,4 @@ ffmpeg-python
 ffprobe-python
 faiss-cpu
 seaborn
+scikit-learn

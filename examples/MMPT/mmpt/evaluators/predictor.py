@@ -380,6 +380,8 @@ class COINPredictor(Predictor):
         print(sample["video_id"])
         output = model(**sample)
         logits = self._merge_windows(sample, output)
+        print("LOGITS SHAPE")
+        print(logits.shape)
         Y_pred.append(logits.argmax(dim=1))
         Y_true.append(sample["video_targets"].squeeze(0).cpu())
         logits_output = logits.argmax(dim=1)
@@ -484,19 +486,46 @@ class COINZSPredictor(COINPredictor):
         return tensor
 
     def __call__(self, sample, label_hidden_states, model, lbd, Y_pred, Y_true):
+#        print(sample['video_id'][0])
+#        print(os.path.join(os.environ['PROJECT'], 'Fall-2021-Rotation/fairseq/examples/MMPT/data/youtube-jomi-dataset/jomi_jomi_zs_results'))
+        video_results_filename = os.path.join(os.environ['PROJECT'], 'Fall-2021-Rotation/fairseq/examples/MMPT/data/youtube-jomi-dataset/jomi_jomi_zs_results', sample['video_id'][0] + '.txt')
+        video_results_file = open(video_results_filename, 'w')
+        print("Created video results file")
+
+        print("INSIDE COINZSPREDICTOR CALL METHOD!")
+        print("SAMPLE VIDEO TARGETS SHAPE")
+        print(sample['video_targets'].shape)
         sample = self.reshape_subsample(sample)
         sample = self.to_ctx(sample)
         # compute the average logits over sliding windows.
         sample["output_hidden_states"] = True
         video_outputs = model.forward_video(**sample).cpu()
+        print("VIDEO OUTPUTS SHAPE")
+        print(video_outputs.shape)
         output = {"logits": video_outputs[:, 1:sample["vmasks"].size(1)+1] @ label_hidden_states.t()}
         logits = self._merge_windows(sample, output)
+        print("LOGITS SHAPE")
+        print(logits.shape)
+        num_logits_rows = logits.shape[0]
+        for f in range(num_logits_rows):
+            video_results_file.write('Row: {}'.format(str(f)) + '\n')
+            num_logits = logits.shape[1]
+            logits_list = [logits[f,k].item() for k in range(num_logits)]
+            for logit in logits_list:
+                video_results_file.write(str(round(logit, 1)) + ' ')
+            video_results_file.write('\n')
+            print("Row: {}".format(str(f)))
+            print(logits[f,:])
+        video_results_file.close()
+
         # logic of zero-shot for sequence labeling.
         logits_argmax = logits.argmax(dim=1) + 1  # 0 is "O" label.
         logits_max = logits.max(dim=1)[0]
 
         pred = torch.zeros_like(logits_argmax)
         label_select = logits_max > lbd  # 73 or 74
+        print("LBD")
+        print(lbd)
         pred[label_select] = logits_argmax[label_select]
 
         Y_pred.append(pred)

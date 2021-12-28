@@ -1,0 +1,747 @@
+IN DISTRIBUTED INIT FILE
+RUNNING FAIRSEQ INIT FILE
+RUNNING CRITERION INIT FILE
+Attempting to register criterion
+{}
+Registry name is: criterion
+IN DATA INIT FILE
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}}
+Registry name is: tokenizer
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}, 'tokenizer': {'registry': {}, 'default': None, 'dataclass_registry': {}}}
+Registry name is: bpe
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}, 'tokenizer': {'registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizer'>, 'nltk': <class 'fairseq.data.encoders.nltk_tokenizer.NLTKTokenizer'>, 'space': <class 'fairseq.data.encoders.space_tokenizer.SpaceTokenizer'>}, 'default': None, 'dataclass_registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizerConfig'>, 'nltk': <class 'fairseq.dataclass.configs.FairseqDataclass'>, 'space': <class 'fairseq.dataclass.configs.FairseqDataclass'>}}, 'bpe': {'registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBPE'>, 'bytes': <class 'fairseq.data.encoders.bytes.Bytes'>, 'characters': <class 'fairseq.data.encoders.characters.Characters'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPE'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPE'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPE'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPE'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceBPE'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPE'>}, 'default': None, 'dataclass_registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBpeConfig'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPEConfig'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPEConfig'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPEConfig'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPEConfig'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceConfig'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPEConfig'>}}}
+Registry name is: optimizer
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}, 'tokenizer': {'registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizer'>, 'nltk': <class 'fairseq.data.encoders.nltk_tokenizer.NLTKTokenizer'>, 'space': <class 'fairseq.data.encoders.space_tokenizer.SpaceTokenizer'>}, 'default': None, 'dataclass_registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizerConfig'>, 'nltk': <class 'fairseq.dataclass.configs.FairseqDataclass'>, 'space': <class 'fairseq.dataclass.configs.FairseqDataclass'>}}, 'bpe': {'registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBPE'>, 'bytes': <class 'fairseq.data.encoders.bytes.Bytes'>, 'characters': <class 'fairseq.data.encoders.characters.Characters'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPE'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPE'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPE'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPE'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceBPE'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPE'>}, 'default': None, 'dataclass_registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBpeConfig'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPEConfig'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPEConfig'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPEConfig'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPEConfig'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceConfig'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPEConfig'>}}, 'optimizer': {'registry': {'adadelta': <class 'fairseq.optim.adadelta.Adadelta'>, 'adafactor': <class 'fairseq.optim.adafactor.FairseqAdafactor'>, 'adagrad': <class 'fairseq.optim.adagrad.Adagrad'>, 'adam': <class 'fairseq.optim.adam.FairseqAdam'>, 'adamax': <class 'fairseq.optim.adamax.FairseqAdamax'>}, 'default': None, 'dataclass_registry': {'adam': <class 'fairseq.optim.adam.FairseqAdamConfig'>}}}
+Registry name is: lr_scheduler
+2021-11-25 17:24:19 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}, 'tokenizer': {'registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizer'>, 'nltk': <class 'fairseq.data.encoders.nltk_tokenizer.NLTKTokenizer'>, 'space': <class 'fairseq.data.encoders.space_tokenizer.SpaceTokenizer'>}, 'default': None, 'dataclass_registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizerConfig'>, 'nltk': <class 'fairseq.dataclass.configs.FairseqDataclass'>, 'space': <class 'fairseq.dataclass.configs.FairseqDataclass'>}}, 'bpe': {'registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBPE'>, 'bytes': <class 'fairseq.data.encoders.bytes.Bytes'>, 'characters': <class 'fairseq.data.encoders.characters.Characters'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPE'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPE'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPE'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPE'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceBPE'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPE'>}, 'default': None, 'dataclass_registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBpeConfig'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPEConfig'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPEConfig'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPEConfig'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPEConfig'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceConfig'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPEConfig'>}}, 'optimizer': {'registry': {'adadelta': <class 'fairseq.optim.adadelta.Adadelta'>, 'adafactor': <class 'fairseq.optim.adafactor.FairseqAdafactor'>, 'adagrad': <class 'fairseq.optim.adagrad.Adagrad'>, 'adam': <class 'fairseq.optim.adam.FairseqAdam'>, 'adamax': <class 'fairseq.optim.adamax.FairseqAdamax'>, 'composite': <class 'fairseq.optim.composite.FairseqCompositeOptimizer'>, 'cpu_adam': <class 'fairseq.optim.cpu_adam.FairseqCPUAdam'>, 'lamb': <class 'fairseq.optim.fused_lamb.FairseqLAMB'>, 'nag': <class 'fairseq.optim.nag.FairseqNAG'>, 'sgd': <class 'fairseq.optim.sgd.SGD'>}, 'default': None, 'dataclass_registry': {'adam': <class 'fairseq.optim.adam.FairseqAdamConfig'>, 'composite': <class 'fairseq.optim.composite.CompositeOptimizerConfig'>, 'cpu_adam': <class 'fairseq.optim.cpu_adam.FairseqCPUAdamConfig'>, 'nag': <class 'fairseq.optim.nag.FairseqNAGConfig'>}}, 'lr_scheduler': {'registry': {'cosine': <class 'fairseq.optim.lr_scheduler.cosine_lr_scheduler.CosineLRSchedule'>, 'fixed': <class 'fairseq.optim.lr_scheduler.fixed_schedule.FixedLRSchedule'>, 'inverse_sqrt': <class 'fairseq.optim.lr_scheduler.inverse_square_root_schedule.InverseSquareRootSchedule'>, 'manual': <class 'fairseq.optim.lr_scheduler.manual_lr_scheduler.ManualSchedule'>, 'pass_through': <class 'fairseq.optim.lr_scheduler.pass_through.PassThroughScheduleSchedule'>, 'polynomial_decay': <class 'fairseq.optim.lr_scheduler.polynomial_decay_schedule.PolynomialDecayLRSchedule'>, 'reduce_lr_on_plateau': <class 'fairseq.optim.lr_scheduler.reduce_lr_on_plateau.ReduceLROnPlateauLRSchedule'>, 'step': <class 'fairseq.optim.lr_scheduler.step_lr_scheduler.StepLRSchedule'>, 'tri_stage': <class 'fairseq.optim.lr_scheduler.tri_stage_lr_scheduler.TriStageLRSchedule'>, 'triangular': <class 'fairseq.optim.lr_scheduler.triangular_lr_scheduler.TriangularLRSchedule'>}, 'default': 'fixed', 'dataclass_registry': {'cosine': <class 'fairseq.optim.lr_scheduler.cosine_lr_scheduler.CosineLRScheduleConfig'>, 'fixed': <class 'fairseq.optim.lr_scheduler.fixed_schedule.FixedLRScheduleConfig'>, 'inverse_sqrt': <class 'fairseq.optim.lr_scheduler.inverse_square_root_schedule.InverseSquareRootLRScheduleConfig'>, 'pass_through': <class 'fairseq.optim.lr_scheduler.pass_through.PassThroughScheduleConfig'>, 'polynomial_decay': <class 'fairseq.optim.lr_scheduler.polynomial_decay_schedule.PolynomialDecayLRScheduleConfig'>, 'reduce_lr_on_plateau': <class 'fairseq.optim.lr_scheduler.reduce_lr_on_plateau.ReduceLROnPlateauLRScheduleConfig'>, 'step': <class 'fairseq.optim.lr_scheduler.step_lr_scheduler.StepLRScheduleConfig'>, 'tri_stage': <class 'fairseq.optim.lr_scheduler.tri_stage_lr_scheduler.TriStageLRScheduleConfig'>, 'triangular': <class 'fairseq.optim.lr_scheduler.triangular_lr_scheduler.TriangularLRScheduleConfig'>}}}
+Registry name is: simul_type
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>, 'ctc': <class 'fairseq.criterions.ctc.CtcCriterion'>, 'fastspeech2': <class 'fairseq.criterions.fastspeech2_loss.FastSpeech2Loss'>, 'hubert': <class 'fairseq.criterions.hubert_criterion.HubertCriterion'>, 'label_smoothed_cross_entropy': <class 'fairseq.criterions.label_smoothed_cross_entropy.LabelSmoothedCrossEntropyCriterion'>, 'latency_augmented_label_smoothed_cross_entropy': <class 'fairseq.criterions.label_smoothed_cross_entropy_latency_augmented.LatencyAugmentedLabelSmoothedCrossEntropyCriterion'>, 'label_smoothed_cross_entropy_with_alignment': <class 'fairseq.criterions.label_smoothed_cross_entropy_with_alignment.LabelSmoothedCrossEntropyCriterionWithAlignment'>, 'legacy_masked_lm_loss': <class 'fairseq.criterions.legacy_masked_lm.LegacyMaskedLmLoss'>, 'masked_lm': <class 'fairseq.criterions.masked_lm.MaskedLmLoss'>, 'model': <class 'fairseq.criterions.model_criterion.ModelCriterion'>, 'nat_loss': <class 'fairseq.criterions.nat_loss.LabelSmoothedDualImitationCriterion'>, 'sentence_prediction': <class 'fairseq.criterions.sentence_prediction.SentencePredictionCriterion'>, 'sentence_ranking': <class 'fairseq.criterions.sentence_ranking.SentenceRankingCriterion'>, 'tacotron2': <class 'fairseq.criterions.tacotron2_loss.Tacotron2Criterion'>, 'wav2vec': <class 'fairseq.criterions.wav2vec_criterion.Wav2vecCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>, 'ctc': <class 'fairseq.criterions.ctc.CtcCriterionConfig'>, 'fastspeech2': <class 'fairseq.criterions.fastspeech2_loss.FastSpeech2CriterionConfig'>, 'hubert': <class 'fairseq.criterions.hubert_criterion.HubertCriterionConfig'>, 'label_smoothed_cross_entropy': <class 'fairseq.criterions.label_smoothed_cross_entropy.LabelSmoothedCrossEntropyCriterionConfig'>, 'latency_augmented_label_smoothed_cross_entropy': <class 'fairseq.criterions.label_smoothed_cross_entropy_latency_augmented.LabelSmoothedCrossEntropyCriterionLatencyAugmentConfig'>, 'label_smoothed_cross_entropy_with_alignment': <class 'fairseq.criterions.label_smoothed_cross_entropy_with_alignment.LabelSmoothedCrossEntropyCriterionWithAlignmentConfig'>, 'masked_lm': <class 'fairseq.criterions.masked_lm.MaskedLmConfig'>, 'model': <class 'fairseq.criterions.model_criterion.ModelCriterionConfig'>, 'nat_loss': <class 'fairseq.criterions.nat_loss.LabelSmoothedDualImitationCriterionConfig'>, 'sentence_prediction': <class 'fairseq.criterions.sentence_prediction.SentencePredictionConfig'>, 'tacotron2': <class 'fairseq.criterions.tacotron2_loss.Tacotron2CriterionConfig'>, 'wav2vec': <class 'fairseq.criterions.wav2vec_criterion.Wav2VecCriterionConfig'>}}, 'tokenizer': {'registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizer'>, 'nltk': <class 'fairseq.data.encoders.nltk_tokenizer.NLTKTokenizer'>, 'space': <class 'fairseq.data.encoders.space_tokenizer.SpaceTokenizer'>}, 'default': None, 'dataclass_registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizerConfig'>, 'nltk': <class 'fairseq.dataclass.configs.FairseqDataclass'>, 'space': <class 'fairseq.dataclass.configs.FairseqDataclass'>}}, 'bpe': {'registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBPE'>, 'bytes': <class 'fairseq.data.encoders.bytes.Bytes'>, 'characters': <class 'fairseq.data.encoders.characters.Characters'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPE'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPE'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPE'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPE'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceBPE'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPE'>}, 'default': None, 'dataclass_registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBpeConfig'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPEConfig'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPEConfig'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPEConfig'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPEConfig'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceConfig'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPEConfig'>}}, 'optimizer': {'registry': {'adadelta': <class 'fairseq.optim.adadelta.Adadelta'>, 'adafactor': <class 'fairseq.optim.adafactor.FairseqAdafactor'>, 'adagrad': <class 'fairseq.optim.adagrad.Adagrad'>, 'adam': <class 'fairseq.optim.adam.FairseqAdam'>, 'adamax': <class 'fairseq.optim.adamax.FairseqAdamax'>, 'composite': <class 'fairseq.optim.composite.FairseqCompositeOptimizer'>, 'cpu_adam': <class 'fairseq.optim.cpu_adam.FairseqCPUAdam'>, 'lamb': <class 'fairseq.optim.fused_lamb.FairseqLAMB'>, 'nag': <class 'fairseq.optim.nag.FairseqNAG'>, 'sgd': <class 'fairseq.optim.sgd.SGD'>}, 'default': None, 'dataclass_registry': {'adam': <class 'fairseq.optim.adam.FairseqAdamConfig'>, 'composite': <class 'fairseq.optim.composite.CompositeOptimizerConfig'>, 'cpu_adam': <class 'fairseq.optim.cpu_adam.FairseqCPUAdamConfig'>, 'nag': <class 'fairseq.optim.nag.FairseqNAGConfig'>}}, 'lr_scheduler': {'registry': {'cosine': <class 'fairseq.optim.lr_scheduler.cosine_lr_scheduler.CosineLRSchedule'>, 'fixed': <class 'fairseq.optim.lr_scheduler.fixed_schedule.FixedLRSchedule'>, 'inverse_sqrt': <class 'fairseq.optim.lr_scheduler.inverse_square_root_schedule.InverseSquareRootSchedule'>, 'manual': <class 'fairseq.optim.lr_scheduler.manual_lr_scheduler.ManualSchedule'>, 'pass_through': <class 'fairseq.optim.lr_scheduler.pass_through.PassThroughScheduleSchedule'>, 'polynomial_decay': <class 'fairseq.optim.lr_scheduler.polynomial_decay_schedule.PolynomialDecayLRSchedule'>, 'reduce_lr_on_plateau': <class 'fairseq.optim.lr_scheduler.reduce_lr_on_plateau.ReduceLROnPlateauLRSchedule'>, 'step': <class 'fairseq.optim.lr_scheduler.step_lr_scheduler.StepLRSchedule'>, 'tri_stage': <class 'fairseq.optim.lr_scheduler.tri_stage_lr_scheduler.TriStageLRSchedule'>, 'triangular': <class 'fairseq.optim.lr_scheduler.triangular_lr_scheduler.TriangularLRSchedule'>}, 'default': 'fixed', 'dataclass_registry': {'cosine': <class 'fairseq.optim.lr_scheduler.cosine_lr_scheduler.CosineLRScheduleConfig'>, 'fixed': <class 'fairseq.optim.lr_scheduler.fixed_schedule.FixedLRScheduleConfig'>, 'inverse_sqrt': <class 'fairseq.optim.lr_scheduler.inverse_square_root_schedule.InverseSquareRootLRScheduleConfig'>, 'pass_through': <class 'fairseq.optim.lr_scheduler.pass_through.PassThroughScheduleConfig'>, 'polynomial_decay': <class 'fairseq.optim.lr_scheduler.polynomial_decay_schedule.PolynomialDecayLRScheduleConfig'>, 'reduce_lr_on_plateau': <class 'fairseq.optim.lr_scheduler.reduce_lr_on_plateau.ReduceLROnPlateauLRScheduleConfig'>, 'step': <class 'fairseq.optim.lr_scheduler.step_lr_scheduler.StepLRScheduleConfig'>, 'tri_stage': <class 'fairseq.optim.lr_scheduler.tri_stage_lr_scheduler.TriStageLRScheduleConfig'>, 'triangular': <class 'fairseq.optim.lr_scheduler.triangular_lr_scheduler.TriangularLRScheduleConfig'>}}, 'simul_type': {'registry': {'hard_aligned': <class 'examples.simultaneous_translation.modules.monotonic_multihead_attention.MonotonicAttention'>, 'infinite_lookback': <class 'examples.simultaneous_translation.modules.monotonic_multihead_attention.MonotonicInfiniteLookbackAttention'>, 'waitk': <class 'examples.simultaneous_translation.modules.monotonic_multihead_attention.WaitKAttention'>, 'chunkwise': <class 'examples.simultaneous_translation.modules.monotonic_multihead_attention.ChunkwiseAttention'>, 'waitk_fixed_pre_decision': <class 'examples.simultaneous_translation.modules.fixed_pre_decision.fixed_pooling_monotonic_attention.<locals>.create_model.<locals>.FixedStrideMonotonicAttention'>, 'hard_aligned_fixed_pre_decision': <class 'examples.simultaneous_translation.modules.fixed_pre_decision.fixed_pooling_monotonic_attention.<locals>.create_model.<locals>.FixedStrideMonotonicAttention'>, 'infinite_lookback_fixed_pre_decision': <class 'examples.simultaneous_translation.modules.fixed_pre_decision.fixed_pooling_monotonic_attention.<locals>.create_model.<locals>.FixedStrideMonotonicAttention'>}, 'default': None, 'dataclass_registry': {}}}
+Registry name is: scoring
+2021-11-25 17:24:20 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2021-11-25 17:24:20 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2021-11-25 17:24:20 | INFO | faiss.loader | Loading faiss.
+2021-11-25 17:24:20 | INFO | faiss.loader | Successfully loaded faiss.
+IN MMPTModel Class FILE
+IN MMPT MODELS INIT FILE
+IN FAIRSEQMMMODEL FILE
+CFG DISTRIBUTED TRAINING VALUE: {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'no_c10d', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': False, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_algorithm': 'LocalSGD', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False}
+2021-11-25 17:24:22 | INFO | fairseq_cli.train | {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 1000, 'log_format': None, 'log_file': None, 'tensorboard_logdir': 'runs/retri/youtube-jomi/run_0', 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': 'mmpt', 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'no_c10d', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': False, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_algorithm': 'LocalSGD', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False}, 'dataset': {'_name': None, 'num_workers': 0, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': None, 'batch_size': 1, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': None, 'batch_size_valid': 1, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0}, 'optimization': {'_name': None, 'max_epoch': 25, 'max_update': 0, 'stop_time_hours': 0.0, 'clip_norm': 2.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [5e-05], 'stop_min_lr': -1.0, 'use_bmuf': False}, 'checkpoint': {'_name': None, 'save_dir': 'runs/retri/youtube-jomi', 'restore_file': 'checkpoint_last.pt', 'finetune_from_model': None, 'reset_dataloader': False, 'reset_lr_scheduler': False, 'reset_meters': False, 'reset_optimizer': False, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 1024, 'keep_interval_updates': 2, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': 30, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': False, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'loss', 'maximize_best_checkpoint_metric': False, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': Namespace(_name='mmarch', adam_betas='(0.9, 0.98)', adam_eps=1e-08, all_gather_list_size=16384, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, arch='mmarch', azureml_logging=False, batch_size=1, batch_size_valid=1, best_checkpoint_metric='loss', bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_shard_count=1, checkpoint_suffix='', clip_norm=2.0, combine_valid_subsets=None, cpu=False, cpu_offload=False, criterion='mmloss', curriculum=0, data_buffer_size=10, dataset_impl=None, ddp_backend='no_c10d', ddp_comm_hook='none', device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_num_procs=1, distributed_port=-1, distributed_rank=0, distributed_world_size=1, ema_decay=0.9999, ema_fp32=False, ema_seed_model=None, ema_start_update=0, ema_update_freq=1, empty_cache_freq=0, end_learning_rate=0.0, eos=2, fast_stat_sync=False, find_unused_parameters=False, finetune_from_model=None, fix_batches_to_gpus=False, fixed_validation_seed=None, force_anneal=None, fp16=True, fp16_adam_stats=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, fp32_reduce_scatter=False, gen_subset='test', gradient_as_bucket_view=False, heartbeat_timeout=-1, ignore_unused_valid_subsets=False, keep_best_checkpoints=-1, keep_interval_updates=2, keep_interval_updates_pattern=-1, keep_last_epochs=30, load_checkpoint_on_all_dp_ranks=False, localsgd_frequency=3, log_file=None, log_format=None, log_interval=1000, lr=[5e-05], lr_scheduler='polynomial_decay', max_epoch=25, max_tokens=None, max_tokens_valid=None, max_update=0, max_valid_steps=None, maximize_best_checkpoint_metric=False, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_reshard_after_forward=False, no_save=False, no_save_optimizer_state=False, no_seed_provided=False, nprocs_per_node=1, num_shards=1, num_workers=0, on_cpu_convert_precision=False, optimizer='adam', optimizer_overrides='{}', pad=1, patience=-1, pipeline_balance=None, pipeline_checkpoint='never', pipeline_chunks=0, pipeline_decoder_balance=None, pipeline_decoder_devices=None, pipeline_devices=None, pipeline_encoder_balance=None, pipeline_encoder_devices=None, pipeline_model_parallel=False, plasma_path='/tmp/plasma', power=1.0, profile=False, quantization_config_path=None, required_batch_size_multiple=8, required_seq_len_multiple=1, reset_dataloader=False, reset_logging=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, restore_file='checkpoint_last.pt', save_dir='runs/retri/youtube-jomi', save_interval=1, save_interval_updates=1024, scoring='bleu', seed=1, sentence_avg=False, shard_id=0, simul_type=None, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, stop_min_lr=-1.0, stop_time_hours=0, store_ema=False, suppress_crashes=False, task='mmtask', taskconfig='projects/retri/videoclip/youtube-jomi.yaml', tensorboard_logdir='runs/retri/youtube-jomi/run_0', threshold_loss_scale=None, tokenizer=None, total_num_update='1000000', tpu=False, train_subset='train', unk=3, update_freq=[1], use_bmuf=False, use_old_adam=False, use_plasma_view=False, use_sharded_state=False, user_dir='mmpt', valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, wandb_project=None, warmup_updates=1000, weight_decay=0.0, write_checkpoints_asynchronously=False, zero_sharding='none'), 'task': Namespace(_name='mmtask', adam_betas='(0.9, 0.98)', adam_eps=1e-08, all_gather_list_size=16384, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, arch='mmarch', azureml_logging=False, batch_size=1, batch_size_valid=1, best_checkpoint_metric='loss', bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_shard_count=1, checkpoint_suffix='', clip_norm=2.0, combine_valid_subsets=None, cpu=False, cpu_offload=False, criterion='mmloss', curriculum=0, data_buffer_size=10, dataset_impl=None, ddp_backend='no_c10d', ddp_comm_hook='none', device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_num_procs=1, distributed_port=-1, distributed_rank=0, distributed_world_size=1, ema_decay=0.9999, ema_fp32=False, ema_seed_model=None, ema_start_update=0, ema_update_freq=1, empty_cache_freq=0, end_learning_rate=0.0, eos=2, fast_stat_sync=False, find_unused_parameters=False, finetune_from_model=None, fix_batches_to_gpus=False, fixed_validation_seed=None, force_anneal=None, fp16=True, fp16_adam_stats=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, fp32_reduce_scatter=False, gen_subset='test', gradient_as_bucket_view=False, heartbeat_timeout=-1, ignore_unused_valid_subsets=False, keep_best_checkpoints=-1, keep_interval_updates=2, keep_interval_updates_pattern=-1, keep_last_epochs=30, load_checkpoint_on_all_dp_ranks=False, localsgd_frequency=3, log_file=None, log_format=None, log_interval=1000, lr=[5e-05], lr_scheduler='polynomial_decay', max_epoch=25, max_tokens=None, max_tokens_valid=None, max_update=0, max_valid_steps=None, maximize_best_checkpoint_metric=False, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_reshard_after_forward=False, no_save=False, no_save_optimizer_state=False, no_seed_provided=False, nprocs_per_node=1, num_shards=1, num_workers=0, on_cpu_convert_precision=False, optimizer='adam', optimizer_overrides='{}', pad=1, patience=-1, pipeline_balance=None, pipeline_checkpoint='never', pipeline_chunks=0, pipeline_decoder_balance=None, pipeline_decoder_devices=None, pipeline_devices=None, pipeline_encoder_balance=None, pipeline_encoder_devices=None, pipeline_model_parallel=False, plasma_path='/tmp/plasma', power=1.0, profile=False, quantization_config_path=None, required_batch_size_multiple=8, required_seq_len_multiple=1, reset_dataloader=False, reset_logging=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, restore_file='checkpoint_last.pt', save_dir='runs/retri/youtube-jomi', save_interval=1, save_interval_updates=1024, scoring='bleu', seed=1, sentence_avg=False, shard_id=0, simul_type=None, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, stop_min_lr=-1.0, stop_time_hours=0, store_ema=False, suppress_crashes=False, task='mmtask', taskconfig='projects/retri/videoclip/youtube-jomi.yaml', tensorboard_logdir='runs/retri/youtube-jomi/run_0', threshold_loss_scale=None, tokenizer=None, total_num_update='1000000', tpu=False, train_subset='train', unk=3, update_freq=[1], use_bmuf=False, use_old_adam=False, use_plasma_view=False, use_sharded_state=False, user_dir='mmpt', valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, wandb_project=None, warmup_updates=1000, weight_decay=0.0, write_checkpoints_asynchronously=False, zero_sharding='none'), 'criterion': Namespace(_name='mmloss', adam_betas='(0.9, 0.98)', adam_eps=1e-08, all_gather_list_size=16384, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, arch='mmarch', azureml_logging=False, batch_size=1, batch_size_valid=1, best_checkpoint_metric='loss', bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_shard_count=1, checkpoint_suffix='', clip_norm=2.0, combine_valid_subsets=None, cpu=False, cpu_offload=False, criterion='mmloss', curriculum=0, data_buffer_size=10, dataset_impl=None, ddp_backend='no_c10d', ddp_comm_hook='none', device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_num_procs=1, distributed_port=-1, distributed_rank=0, distributed_world_size=1, ema_decay=0.9999, ema_fp32=False, ema_seed_model=None, ema_start_update=0, ema_update_freq=1, empty_cache_freq=0, end_learning_rate=0.0, eos=2, fast_stat_sync=False, find_unused_parameters=False, finetune_from_model=None, fix_batches_to_gpus=False, fixed_validation_seed=None, force_anneal=None, fp16=True, fp16_adam_stats=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, fp32_reduce_scatter=False, gen_subset='test', gradient_as_bucket_view=False, heartbeat_timeout=-1, ignore_unused_valid_subsets=False, keep_best_checkpoints=-1, keep_interval_updates=2, keep_interval_updates_pattern=-1, keep_last_epochs=30, load_checkpoint_on_all_dp_ranks=False, localsgd_frequency=3, log_file=None, log_format=None, log_interval=1000, lr=[5e-05], lr_scheduler='polynomial_decay', max_epoch=25, max_tokens=None, max_tokens_valid=None, max_update=0, max_valid_steps=None, maximize_best_checkpoint_metric=False, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_reshard_after_forward=False, no_save=False, no_save_optimizer_state=False, no_seed_provided=False, nprocs_per_node=1, num_shards=1, num_workers=0, on_cpu_convert_precision=False, optimizer='adam', optimizer_overrides='{}', pad=1, patience=-1, pipeline_balance=None, pipeline_checkpoint='never', pipeline_chunks=0, pipeline_decoder_balance=None, pipeline_decoder_devices=None, pipeline_devices=None, pipeline_encoder_balance=None, pipeline_encoder_devices=None, pipeline_model_parallel=False, plasma_path='/tmp/plasma', power=1.0, profile=False, quantization_config_path=None, required_batch_size_multiple=8, required_seq_len_multiple=1, reset_dataloader=False, reset_logging=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, restore_file='checkpoint_last.pt', save_dir='runs/retri/youtube-jomi', save_interval=1, save_interval_updates=1024, scoring='bleu', seed=1, sentence_avg=False, shard_id=0, simul_type=None, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, stop_min_lr=-1.0, stop_time_hours=0, store_ema=False, suppress_crashes=False, task='mmtask', taskconfig='projects/retri/videoclip/youtube-jomi.yaml', tensorboard_logdir='runs/retri/youtube-jomi/run_0', threshold_loss_scale=None, tokenizer=None, total_num_update='1000000', tpu=False, train_subset='train', unk=3, update_freq=[1], use_bmuf=False, use_old_adam=False, use_plasma_view=False, use_sharded_state=False, user_dir='mmpt', valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, wandb_project=None, warmup_updates=1000, weight_decay=0.0, write_checkpoints_asynchronously=False, zero_sharding='none'), 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9, 0.98)', 'adam_eps': 1e-08, 'weight_decay': 0.0, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [5e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 1000, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 1000000.0, 'lr': [5e-05]}, 'scoring': {'_name': 'bleu', 'pad': 1, 'eos': 2, 'unk': 3}, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'simul_type': None}
+adjusting batch_size to 1 due to subsampling 1.
+update tensorboard_logdir as runs/retri/youtube-jomi/run_0
+IN TRAIN SPLIT HERE @@@@@@
+PRINTING SELF DATA
+['WOw8TIZUIJo', 'Nt3OhebpxsQ', 'vaaIKAwAzu4', '5aR2jLIkYH8', 'zNF9E4VbLpI', '4IMenyA74ds', 'RvzynDiQO4w', '9T15-dL1bdk', 'm_rcixIruAs', 'md3nG6gD4lk', 'WlDj-Cr9tBw', '_XUFzY14YIA', 'WAwKrL79qWk', '2vEhCTKXCd8', '1HlEcAOcWlg', '6QHCpCnG4O4', 'n8RNKZJUpc4', 'eDJ6-8EtUzQ', 'VXEoJRJNjTY', 'PvDHF_sHeB8', 'tpLv0pjbqJo', 'psbNrJYiGgo', 'Ls5T7mWnnfQ', 'PNiSTrZCx6g', 'Ubm9ysAJclY', 's1TZYR_aLeo', '3by1oaxHcJY', 'ZVQk8rcqOAw', 'oY3So12waZ0', '--qRACRrLFI', 'DbY8LlwEqrg', 'MjAgd52G8TU', 'kO3IHzpuOY0', 'EgBJKkN46Pg', '_Nd3VrxRIIs', 'wi_AbfGcm3I', 'I37dvSGNxLA', 'Di00-lhT0Jo', 'vDBSqIDjxE0', '1yRN-iNfwzo', '-J5wTyBjkOM', 'kaRXwurKf3s', 'PVKJIQR3R84', 'w_D6FzasMrQ', 'o5H_Fo-fLPo', 'kCi574FaciQ', 'VEIdcvKg8EA', '0i0aKro_Ia4', '121tZddrA9g', 'V56PLkKIVzo', 'xQy3xRb5jKw', 'hJk-clhBbJk', 'ZNw3whnZ_Gc', '0nkkbnV3Pdc', '2mT6jXayBqM', 'avr9Yn16awQ', 'zztF003gWj4', '5Q_UJlDAc_w', 'O3llAA0EJns']
+FINISHED PRINTING SELF DATA
+PRINTING SELF CANDS
+[['WOw8TIZUIJo'], ['Nt3OhebpxsQ'], ['vaaIKAwAzu4'], ['5aR2jLIkYH8'], ['zNF9E4VbLpI'], ['4IMenyA74ds'], ['RvzynDiQO4w'], ['9T15-dL1bdk'], ['m_rcixIruAs'], ['md3nG6gD4lk'], ['WlDj-Cr9tBw'], ['_XUFzY14YIA'], ['WAwKrL79qWk'], ['2vEhCTKXCd8'], ['1HlEcAOcWlg'], ['6QHCpCnG4O4'], ['n8RNKZJUpc4'], ['eDJ6-8EtUzQ'], ['VXEoJRJNjTY'], ['PvDHF_sHeB8'], ['tpLv0pjbqJo'], ['psbNrJYiGgo'], ['Ls5T7mWnnfQ'], ['PNiSTrZCx6g'], ['Ubm9ysAJclY'], ['s1TZYR_aLeo'], ['3by1oaxHcJY'], ['ZVQk8rcqOAw'], ['oY3So12waZ0'], ['--qRACRrLFI'], ['DbY8LlwEqrg'], ['MjAgd52G8TU'], ['kO3IHzpuOY0'], ['EgBJKkN46Pg'], ['_Nd3VrxRIIs'], ['wi_AbfGcm3I'], ['I37dvSGNxLA'], ['Di00-lhT0Jo'], ['vDBSqIDjxE0'], ['1yRN-iNfwzo'], ['-J5wTyBjkOM'], ['kaRXwurKf3s'], ['PVKJIQR3R84'], ['w_D6FzasMrQ'], ['o5H_Fo-fLPo'], ['kCi574FaciQ'], ['VEIdcvKg8EA'], ['0i0aKro_Ia4'], ['121tZddrA9g'], ['V56PLkKIVzo'], ['xQy3xRb5jKw'], ['hJk-clhBbJk'], ['ZNw3whnZ_Gc'], ['0nkkbnV3Pdc'], ['2mT6jXayBqM'], ['avr9Yn16awQ']]
+FINISHED PRINTING SELF CANDS
+train_len 56
+JUST PRINTED METAPROCESSOR LENGTH
+IN ALIGNER: ('WOw8TIZUIJo', -1, 0, 0)
+[one example] ['WOw8TIZUIJo']
+caps tensor([[  101,   102,  2061,  ...,     0,     0,     0],
+        [  101,   102,  3398,  ...,     0,     0,     0],
+        [  101,   102, 10303,  ...,     0,     0,     0],
+        ...,
+        [  101,   102,  3974,  ...,     0,     0,     0],
+        [  101,   102,  1996,  ...,     0,     0,     0],
+        [  101,   102,  2065,  ...,     0,     0,     0]])
+cmasks tensor([[ True,  True,  True,  ..., False, False, False],
+        [ True,  True,  True,  ..., False, False, False],
+        [ True,  True,  True,  ..., False, False, False],
+        ...,
+        [ True,  True,  True,  ..., False, False, False],
+        [ True,  True,  True,  ..., False, False, False],
+        [ True,  True,  True,  ..., False, False, False]])
+vfeats torch.Size([16, 32, 512])
+vfeats first tensor([[ 0.0006,  0.0826, -0.0242,  ...,  0.0438, -0.0205, -0.0171],
+        [ 0.0004,  0.0945, -0.0332,  ...,  0.0440, -0.0177, -0.0102],
+        [ 0.0064,  0.0925, -0.0483,  ...,  0.0335, -0.0331, -0.0213],
+        ...,
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000]])
+vfeats last tensor([[ 0.0093,  0.1030, -0.0440,  ...,  0.0133, -0.0071,  0.0590],
+        [ 0.0309,  0.0360, -0.0203,  ...,  0.0303, -0.0500,  0.0302],
+        [-0.0341,  0.1166, -0.0543,  ...,  0.0456, -0.0103,  0.0494],
+        ...,
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000]])
+vmasks tensor([[ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True, False, False, False, False, False, False, False, False,
+         False, False]])
+video_start tensor([ 1,  8, 32, 29,  0,  8,  0, 14,  0, 23,  5, 13,  0,  3,  0, 27])
+video_end tensor([29, 30, 36, 48, 12, 26,  7, 19, 28, 34, 29, 22, 29, 14, 25, 49])
+text_start tensor([5, 4, 7, 2, 0, 0, 0, 5, 2, 5, 5, 0, 0, 1, 0, 6])
+text_end tensor([ 8,  6, 11, 11,  4,  6,  2,  7,  4,  9,  8,  6,  5,  3,  3, 11])
+[end of one example]
+PRINTING SELF DATA
+['9YkOs7dOt0I', 'g_Mh8KK0rTo', 'PzlYPvFw54k', 'WDP-FbJuOqo', 'FPYHPZvBLBM', 'pGCc_fvbGyo', 'QME0j1ih4QE', '5QjpV-naNuM', 'v9IwBmxy0zI', 'YSlUsrbduCU', 'ywE8Xh_CRTc', 'pqMuQV_dT-k', 'HdSdIqPOBrc', 'iBuqBF8WrgY', 'buKeMBJX_k0', 'UwkNgmoFVcU', 't6iFFh2u8t8', 'ufyumqJ33MI', 'gnBAG2gqC-4', 'pyDiaZvjcOE']
+FINISHED PRINTING SELF DATA
+PRINTING SELF CANDS
+[['9YkOs7dOt0I'], ['g_Mh8KK0rTo'], ['PzlYPvFw54k'], ['WDP-FbJuOqo'], ['FPYHPZvBLBM'], ['pGCc_fvbGyo'], ['QME0j1ih4QE'], ['5QjpV-naNuM'], ['v9IwBmxy0zI'], ['YSlUsrbduCU'], ['ywE8Xh_CRTc'], ['pqMuQV_dT-k'], ['HdSdIqPOBrc'], ['iBuqBF8WrgY'], ['buKeMBJX_k0'], ['UwkNgmoFVcU']]
+FINISHED PRINTING SELF CANDS
+val_len 16
+IN ALIGNER: ('9YkOs7dOt0I', -1, 0, 0)
+[one example] ['9YkOs7dOt0I']
+caps tensor([[ 101,  102, 2061,  ...,    0,    0,    0],
+        [ 101,  102, 5923,  ...,    0,    0,    0],
+        [ 101,  102, 2006,  ...,    0,    0,    0],
+        ...,
+        [ 101,  102, 2023,  ...,    0,    0,    0],
+        [ 101,  102, 2023,  ...,    0,    0,    0],
+        [ 101,  102, 2006,  ...,    0,    0,    0]])
+cmasks tensor([[ True,  True,  True,  ..., False, False, False],
+        [ True,  True,  True,  ..., False, False, False],
+        [ True,  True,  True,  ..., False, False, False],
+        ...,
+        [ True,  True,  True,  ..., False, False, False],
+        [ True,  True,  True,  ..., False, False, False],
+        [ True,  True,  True,  ..., False, False, False]])
+vfeats torch.Size([16, 32, 512])
+vfeats first tensor([[-0.0228,  0.0692, -0.0022,  ..., -0.0311,  0.0035,  0.0148],
+        [-0.0203,  0.0460, -0.0051,  ..., -0.0298, -0.0162, -0.0063],
+        [-0.0250,  0.0283, -0.0241,  ..., -0.0181, -0.0109, -0.0021],
+        ...,
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000]])
+vfeats last tensor([[-0.0304,  0.0298, -0.0572,  ..., -0.0854,  0.0032, -0.0068],
+        [ 0.0078,  0.1282, -0.0543,  ...,  0.0393, -0.0096,  0.0132],
+        [ 0.0086,  0.1487, -0.0450,  ...,  0.0244,  0.0018,  0.0199],
+        ...,
+        [-0.0007,  0.1266, -0.0045,  ..., -0.0027, -0.0066,  0.0142],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0000,  0.0000,  0.0000]])
+vmasks tensor([[ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True, False, False,
+         False, False],
+        [ True,  True,  True,  True, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True, False, False, False,
+         False, False],
+        [ True,  True,  True, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False, False, False, False, False, False, False, False, False,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+         False, False],
+        [ True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+          True,  True,  True,  True,  True,  True,  True,  True,  True,  True,
+         False, False]])
+video_start tensor([83, 61, 25, 42, 83, 44, 79, 38, 68, 53, 83, 22, 99, 35, 22, 25])
+video_end tensor([108,  72,  41,  57,  89,  62, 107,  42,  77,  59,  92,  44, 126,  38,
+         52,  55])
+text_start tensor([11,  7,  2,  0,  9,  1, 12,  2,  9,  5, 11,  0, 14,  0,  0,  2])
+text_end tensor([14, 10,  4,  4, 13,  5, 14,  3, 12,  7, 13,  4, 15,  2,  3,  6])
+[end of one example]
+2021-11-25 17:24:27 | INFO | fairseq_cli.train | FairseqMMModel(
+  (mmmodel): MMFusionSeparate(
+    (video_encoder): MMBertForEncoder(
+      (videomlp): VideoTokenMLP(
+        (linear1): Linear(in_features=512, out_features=768, bias=True)
+        (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (linear2): Linear(in_features=768, out_features=768, bias=True)
+      )
+      (bert): MMBertModel(
+        (embeddings): MMBertEmbeddings(
+          (word_embeddings): Embedding(30522, 768, padding_idx=0)
+          (position_embeddings): Embedding(512, 768)
+          (token_type_embeddings): Embedding(2, 768)
+          (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (encoder): MultiLayerAttentionMaskBertEncoder(
+          (layer): ModuleList(
+            (0): BertLayer(
+              (attention): BertAttention(
+                (self): BertSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (1): BertLayer(
+              (attention): BertAttention(
+                (self): BertSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (2): BertLayer(
+              (attention): BertAttention(
+                (self): BertSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (3): BertLayer(
+              (attention): BertAttention(
+                (self): BertSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (4): BertLayer(
+              (attention): BertAttention(
+                (self): BertSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (5): BertLayer(
+              (attention): BertAttention(
+                (self): BertSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+          )
+        )
+        (pooler): BertPooler(
+          (dense): Linear(in_features=768, out_features=768, bias=True)
+          (activation): Tanh()
+        )
+      )
+    )
+    (text_encoder): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (1): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (2): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (3): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (4): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (5): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (6): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (7): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (8): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (9): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (10): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (11): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+      (pooler): BertPooler(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (activation): Tanh()
+      )
+    )
+  )
+)
+2021-11-25 17:24:27 | INFO | fairseq_cli.train | task: FairseqMMTask
+2021-11-25 17:24:27 | INFO | fairseq_cli.train | model: FairseqMMModel
+2021-11-25 17:24:27 | INFO | fairseq_cli.train | criterion: MMCriterion
+2021-11-25 17:24:27 | INFO | fairseq_cli.train | num. shared model params: 177,423,360 (num. trained: 177,423,360)
+2021-11-25 17:24:27 | INFO | fairseq_cli.train | num. expert model params: 0 (num. trained: 0)
+2021-11-25 17:24:30 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-11-25 17:24:30 | INFO | fairseq.utils | rank   0: capabilities =  7.0  ; total memory = 31.749 GB ; name = Tesla V100-SXM2-32GB                    
+2021-11-25 17:24:30 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-11-25 17:24:30 | INFO | fairseq_cli.train | training on 1 devices (GPUs/TPUs)
+2021-11-25 17:24:30 | INFO | fairseq_cli.train | max tokens per device = None and max sentences per device = 1
+2021-11-25 17:24:30 | INFO | fairseq.trainer | Preparing to load checkpoint runs/retri/youtube-jomi/checkpoint_last.pt
+2021-11-25 17:24:30 | INFO | fairseq.trainer | No existing checkpoint found runs/retri/youtube-jomi/checkpoint_last.pt
+2021-11-25 17:24:30 | INFO | fairseq.trainer | loading train data for epoch 1
+IN DISTRIBUTED INIT FILE
+RUNNING FAIRSEQ INIT FILE
+RUNNING CRITERION INIT FILE
+Attempting to register criterion
+{}
+Registry name is: criterion
+IN DATA INIT FILE
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}}
+Registry name is: tokenizer
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}, 'tokenizer': {'registry': {}, 'default': None, 'dataclass_registry': {}}}
+Registry name is: bpe
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}, 'tokenizer': {'registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizer'>, 'nltk': <class 'fairseq.data.encoders.nltk_tokenizer.NLTKTokenizer'>, 'space': <class 'fairseq.data.encoders.space_tokenizer.SpaceTokenizer'>}, 'default': None, 'dataclass_registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizerConfig'>, 'nltk': <class 'fairseq.dataclass.configs.FairseqDataclass'>, 'space': <class 'fairseq.dataclass.configs.FairseqDataclass'>}}, 'bpe': {'registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBPE'>, 'bytes': <class 'fairseq.data.encoders.bytes.Bytes'>, 'characters': <class 'fairseq.data.encoders.characters.Characters'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPE'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPE'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPE'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPE'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceBPE'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPE'>}, 'default': None, 'dataclass_registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBpeConfig'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPEConfig'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPEConfig'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPEConfig'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPEConfig'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceConfig'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPEConfig'>}}}
+Registry name is: optimizer
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}, 'tokenizer': {'registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizer'>, 'nltk': <class 'fairseq.data.encoders.nltk_tokenizer.NLTKTokenizer'>, 'space': <class 'fairseq.data.encoders.space_tokenizer.SpaceTokenizer'>}, 'default': None, 'dataclass_registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizerConfig'>, 'nltk': <class 'fairseq.dataclass.configs.FairseqDataclass'>, 'space': <class 'fairseq.dataclass.configs.FairseqDataclass'>}}, 'bpe': {'registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBPE'>, 'bytes': <class 'fairseq.data.encoders.bytes.Bytes'>, 'characters': <class 'fairseq.data.encoders.characters.Characters'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPE'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPE'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPE'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPE'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceBPE'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPE'>}, 'default': None, 'dataclass_registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBpeConfig'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPEConfig'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPEConfig'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPEConfig'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPEConfig'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceConfig'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPEConfig'>}}, 'optimizer': {'registry': {'adadelta': <class 'fairseq.optim.adadelta.Adadelta'>, 'adafactor': <class 'fairseq.optim.adafactor.FairseqAdafactor'>, 'adagrad': <class 'fairseq.optim.adagrad.Adagrad'>, 'adam': <class 'fairseq.optim.adam.FairseqAdam'>, 'adamax': <class 'fairseq.optim.adamax.FairseqAdamax'>}, 'default': None, 'dataclass_registry': {'adam': <class 'fairseq.optim.adam.FairseqAdamConfig'>}}}
+Registry name is: lr_scheduler
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>}}, 'tokenizer': {'registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizer'>, 'nltk': <class 'fairseq.data.encoders.nltk_tokenizer.NLTKTokenizer'>, 'space': <class 'fairseq.data.encoders.space_tokenizer.SpaceTokenizer'>}, 'default': None, 'dataclass_registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizerConfig'>, 'nltk': <class 'fairseq.dataclass.configs.FairseqDataclass'>, 'space': <class 'fairseq.dataclass.configs.FairseqDataclass'>}}, 'bpe': {'registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBPE'>, 'bytes': <class 'fairseq.data.encoders.bytes.Bytes'>, 'characters': <class 'fairseq.data.encoders.characters.Characters'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPE'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPE'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPE'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPE'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceBPE'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPE'>}, 'default': None, 'dataclass_registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBpeConfig'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPEConfig'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPEConfig'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPEConfig'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPEConfig'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceConfig'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPEConfig'>}}, 'optimizer': {'registry': {'adadelta': <class 'fairseq.optim.adadelta.Adadelta'>, 'adafactor': <class 'fairseq.optim.adafactor.FairseqAdafactor'>, 'adagrad': <class 'fairseq.optim.adagrad.Adagrad'>, 'adam': <class 'fairseq.optim.adam.FairseqAdam'>, 'adamax': <class 'fairseq.optim.adamax.FairseqAdamax'>, 'composite': <class 'fairseq.optim.composite.FairseqCompositeOptimizer'>, 'cpu_adam': <class 'fairseq.optim.cpu_adam.FairseqCPUAdam'>, 'lamb': <class 'fairseq.optim.fused_lamb.FairseqLAMB'>, 'nag': <class 'fairseq.optim.nag.FairseqNAG'>, 'sgd': <class 'fairseq.optim.sgd.SGD'>}, 'default': None, 'dataclass_registry': {'adam': <class 'fairseq.optim.adam.FairseqAdamConfig'>, 'composite': <class 'fairseq.optim.composite.CompositeOptimizerConfig'>, 'cpu_adam': <class 'fairseq.optim.cpu_adam.FairseqCPUAdamConfig'>, 'nag': <class 'fairseq.optim.nag.FairseqNAGConfig'>}}, 'lr_scheduler': {'registry': {'cosine': <class 'fairseq.optim.lr_scheduler.cosine_lr_scheduler.CosineLRSchedule'>, 'fixed': <class 'fairseq.optim.lr_scheduler.fixed_schedule.FixedLRSchedule'>, 'inverse_sqrt': <class 'fairseq.optim.lr_scheduler.inverse_square_root_schedule.InverseSquareRootSchedule'>, 'manual': <class 'fairseq.optim.lr_scheduler.manual_lr_scheduler.ManualSchedule'>, 'pass_through': <class 'fairseq.optim.lr_scheduler.pass_through.PassThroughScheduleSchedule'>, 'polynomial_decay': <class 'fairseq.optim.lr_scheduler.polynomial_decay_schedule.PolynomialDecayLRSchedule'>, 'reduce_lr_on_plateau': <class 'fairseq.optim.lr_scheduler.reduce_lr_on_plateau.ReduceLROnPlateauLRSchedule'>, 'step': <class 'fairseq.optim.lr_scheduler.step_lr_scheduler.StepLRSchedule'>, 'tri_stage': <class 'fairseq.optim.lr_scheduler.tri_stage_lr_scheduler.TriStageLRSchedule'>, 'triangular': <class 'fairseq.optim.lr_scheduler.triangular_lr_scheduler.TriangularLRSchedule'>}, 'default': 'fixed', 'dataclass_registry': {'cosine': <class 'fairseq.optim.lr_scheduler.cosine_lr_scheduler.CosineLRScheduleConfig'>, 'fixed': <class 'fairseq.optim.lr_scheduler.fixed_schedule.FixedLRScheduleConfig'>, 'inverse_sqrt': <class 'fairseq.optim.lr_scheduler.inverse_square_root_schedule.InverseSquareRootLRScheduleConfig'>, 'pass_through': <class 'fairseq.optim.lr_scheduler.pass_through.PassThroughScheduleConfig'>, 'polynomial_decay': <class 'fairseq.optim.lr_scheduler.polynomial_decay_schedule.PolynomialDecayLRScheduleConfig'>, 'reduce_lr_on_plateau': <class 'fairseq.optim.lr_scheduler.reduce_lr_on_plateau.ReduceLROnPlateauLRScheduleConfig'>, 'step': <class 'fairseq.optim.lr_scheduler.step_lr_scheduler.StepLRScheduleConfig'>, 'tri_stage': <class 'fairseq.optim.lr_scheduler.tri_stage_lr_scheduler.TriStageLRScheduleConfig'>, 'triangular': <class 'fairseq.optim.lr_scheduler.triangular_lr_scheduler.TriangularLRScheduleConfig'>}}}
+Registry name is: simul_type
+{'criterion': {'registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLoss'>, 'composite_loss': <class 'fairseq.criterions.composite_loss.CompositeLoss'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterion'>, 'ctc': <class 'fairseq.criterions.ctc.CtcCriterion'>, 'fastspeech2': <class 'fairseq.criterions.fastspeech2_loss.FastSpeech2Loss'>, 'hubert': <class 'fairseq.criterions.hubert_criterion.HubertCriterion'>, 'label_smoothed_cross_entropy': <class 'fairseq.criterions.label_smoothed_cross_entropy.LabelSmoothedCrossEntropyCriterion'>, 'latency_augmented_label_smoothed_cross_entropy': <class 'fairseq.criterions.label_smoothed_cross_entropy_latency_augmented.LatencyAugmentedLabelSmoothedCrossEntropyCriterion'>, 'label_smoothed_cross_entropy_with_alignment': <class 'fairseq.criterions.label_smoothed_cross_entropy_with_alignment.LabelSmoothedCrossEntropyCriterionWithAlignment'>, 'legacy_masked_lm_loss': <class 'fairseq.criterions.legacy_masked_lm.LegacyMaskedLmLoss'>, 'masked_lm': <class 'fairseq.criterions.masked_lm.MaskedLmLoss'>, 'model': <class 'fairseq.criterions.model_criterion.ModelCriterion'>, 'nat_loss': <class 'fairseq.criterions.nat_loss.LabelSmoothedDualImitationCriterion'>, 'sentence_prediction': <class 'fairseq.criterions.sentence_prediction.SentencePredictionCriterion'>, 'sentence_ranking': <class 'fairseq.criterions.sentence_ranking.SentenceRankingCriterion'>, 'tacotron2': <class 'fairseq.criterions.tacotron2_loss.Tacotron2Criterion'>, 'wav2vec': <class 'fairseq.criterions.wav2vec_criterion.Wav2vecCriterion'>}, 'default': 'cross_entropy', 'dataclass_registry': {'adaptive_loss': <class 'fairseq.criterions.adaptive_loss.AdaptiveLossConfig'>, 'cross_entropy': <class 'fairseq.criterions.cross_entropy.CrossEntropyCriterionConfig'>, 'ctc': <class 'fairseq.criterions.ctc.CtcCriterionConfig'>, 'fastspeech2': <class 'fairseq.criterions.fastspeech2_loss.FastSpeech2CriterionConfig'>, 'hubert': <class 'fairseq.criterions.hubert_criterion.HubertCriterionConfig'>, 'label_smoothed_cross_entropy': <class 'fairseq.criterions.label_smoothed_cross_entropy.LabelSmoothedCrossEntropyCriterionConfig'>, 'latency_augmented_label_smoothed_cross_entropy': <class 'fairseq.criterions.label_smoothed_cross_entropy_latency_augmented.LabelSmoothedCrossEntropyCriterionLatencyAugmentConfig'>, 'label_smoothed_cross_entropy_with_alignment': <class 'fairseq.criterions.label_smoothed_cross_entropy_with_alignment.LabelSmoothedCrossEntropyCriterionWithAlignmentConfig'>, 'masked_lm': <class 'fairseq.criterions.masked_lm.MaskedLmConfig'>, 'model': <class 'fairseq.criterions.model_criterion.ModelCriterionConfig'>, 'nat_loss': <class 'fairseq.criterions.nat_loss.LabelSmoothedDualImitationCriterionConfig'>, 'sentence_prediction': <class 'fairseq.criterions.sentence_prediction.SentencePredictionConfig'>, 'tacotron2': <class 'fairseq.criterions.tacotron2_loss.Tacotron2CriterionConfig'>, 'wav2vec': <class 'fairseq.criterions.wav2vec_criterion.Wav2VecCriterionConfig'>}}, 'tokenizer': {'registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizer'>, 'nltk': <class 'fairseq.data.encoders.nltk_tokenizer.NLTKTokenizer'>, 'space': <class 'fairseq.data.encoders.space_tokenizer.SpaceTokenizer'>}, 'default': None, 'dataclass_registry': {'moses': <class 'fairseq.data.encoders.moses_tokenizer.MosesTokenizerConfig'>, 'nltk': <class 'fairseq.dataclass.configs.FairseqDataclass'>, 'space': <class 'fairseq.dataclass.configs.FairseqDataclass'>}}, 'bpe': {'registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBPE'>, 'bytes': <class 'fairseq.data.encoders.bytes.Bytes'>, 'characters': <class 'fairseq.data.encoders.characters.Characters'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPE'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPE'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPE'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPE'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceBPE'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPE'>}, 'default': None, 'dataclass_registry': {'byte_bpe': <class 'fairseq.data.encoders.byte_bpe.ByteBpeConfig'>, 'fastbpe': <class 'fairseq.data.encoders.fastbpe.fastBPEConfig'>, 'gpt2': <class 'fairseq.data.encoders.gpt2_bpe.GPT2BPEConfig'>, 'bert': <class 'fairseq.data.encoders.hf_bert_bpe.BertBPEConfig'>, 'hf_byte_bpe': <class 'fairseq.data.encoders.hf_byte_bpe.HuggingFaceByteLevelBPEConfig'>, 'sentencepiece': <class 'fairseq.data.encoders.sentencepiece_bpe.SentencepieceConfig'>, 'subword_nmt': <class 'fairseq.data.encoders.subword_nmt_bpe.SubwordNMTBPEConfig'>}}, 'optimizer': {'registry': {'adadelta': <class 'fairseq.optim.adadelta.Adadelta'>, 'adafactor': <class 'fairseq.optim.adafactor.FairseqAdafactor'>, 'adagrad': <class 'fairseq.optim.adagrad.Adagrad'>, 'adam': <class 'fairseq.optim.adam.FairseqAdam'>, 'adamax': <class 'fairseq.optim.adamax.FairseqAdamax'>, 'composite': <class 'fairseq.optim.composite.FairseqCompositeOptimizer'>, 'cpu_adam': <class 'fairseq.optim.cpu_adam.FairseqCPUAdam'>, 'lamb': <class 'fairseq.optim.fused_lamb.FairseqLAMB'>, 'nag': <class 'fairseq.optim.nag.FairseqNAG'>, 'sgd': <class 'fairseq.optim.sgd.SGD'>}, 'default': None, 'dataclass_registry': {'adam': <class 'fairseq.optim.adam.FairseqAdamConfig'>, 'composite': <class 'fairseq.optim.composite.CompositeOptimizerConfig'>, 'cpu_adam': <class 'fairseq.optim.cpu_adam.FairseqCPUAdamConfig'>, 'nag': <class 'fairseq.optim.nag.FairseqNAGConfig'>}}, 'lr_scheduler': {'registry': {'cosine': <class 'fairseq.optim.lr_scheduler.cosine_lr_scheduler.CosineLRSchedule'>, 'fixed': <class 'fairseq.optim.lr_scheduler.fixed_schedule.FixedLRSchedule'>, 'inverse_sqrt': <class 'fairseq.optim.lr_scheduler.inverse_square_root_schedule.InverseSquareRootSchedule'>, 'manual': <class 'fairseq.optim.lr_scheduler.manual_lr_scheduler.ManualSchedule'>, 'pass_through': <class 'fairseq.optim.lr_scheduler.pass_through.PassThroughScheduleSchedule'>, 'polynomial_decay': <class 'fairseq.optim.lr_scheduler.polynomial_decay_schedule.PolynomialDecayLRSchedule'>, 'reduce_lr_on_plateau': <class 'fairseq.optim.lr_scheduler.reduce_lr_on_plateau.ReduceLROnPlateauLRSchedule'>, 'step': <class 'fairseq.optim.lr_scheduler.step_lr_scheduler.StepLRSchedule'>, 'tri_stage': <class 'fairseq.optim.lr_scheduler.tri_stage_lr_scheduler.TriStageLRSchedule'>, 'triangular': <class 'fairseq.optim.lr_scheduler.triangular_lr_scheduler.TriangularLRSchedule'>}, 'default': 'fixed', 'dataclass_registry': {'cosine': <class 'fairseq.optim.lr_scheduler.cosine_lr_scheduler.CosineLRScheduleConfig'>, 'fixed': <class 'fairseq.optim.lr_scheduler.fixed_schedule.FixedLRScheduleConfig'>, 'inverse_sqrt': <class 'fairseq.optim.lr_scheduler.inverse_square_root_schedule.InverseSquareRootLRScheduleConfig'>, 'pass_through': <class 'fairseq.optim.lr_scheduler.pass_through.PassThroughScheduleConfig'>, 'polynomial_decay': <class 'fairseq.optim.lr_scheduler.polynomial_decay_schedule.PolynomialDecayLRScheduleConfig'>, 'reduce_lr_on_plateau': <class 'fairseq.optim.lr_scheduler.reduce_lr_on_plateau.ReduceLROnPlateauLRScheduleConfig'>, 'step': <class 'fairseq.optim.lr_scheduler.step_lr_scheduler.StepLRScheduleConfig'>, 'tri_stage': <class 'fairseq.optim.lr_scheduler.tri_stage_lr_scheduler.TriStageLRScheduleConfig'>, 'triangular': <class 'fairseq.optim.lr_scheduler.triangular_lr_scheduler.TriangularLRScheduleConfig'>}}, 'simul_type': {'registry': {'hard_aligned': <class 'examples.simultaneous_translation.modules.monotonic_multihead_attention.MonotonicAttention'>, 'infinite_lookback': <class 'examples.simultaneous_translation.modules.monotonic_multihead_attention.MonotonicInfiniteLookbackAttention'>, 'waitk': <class 'examples.simultaneous_translation.modules.monotonic_multihead_attention.WaitKAttention'>, 'chunkwise': <class 'examples.simultaneous_translation.modules.monotonic_multihead_attention.ChunkwiseAttention'>, 'waitk_fixed_pre_decision': <class 'examples.simultaneous_translation.modules.fixed_pre_decision.fixed_pooling_monotonic_attention.<locals>.create_model.<locals>.FixedStrideMonotonicAttention'>, 'hard_aligned_fixed_pre_decision': <class 'examples.simultaneous_translation.modules.fixed_pre_decision.fixed_pooling_monotonic_attention.<locals>.create_model.<locals>.FixedStrideMonotonicAttention'>, 'infinite_lookback_fixed_pre_decision': <class 'examples.simultaneous_translation.modules.fixed_pre_decision.fixed_pooling_monotonic_attention.<locals>.create_model.<locals>.FixedStrideMonotonicAttention'>}, 'default': None, 'dataclass_registry': {}}}
+Registry name is: scoring
+IN MMPTModel Class FILE
+IN MMPT MODELS INIT FILE
+IN FAIRSEQMMMODEL FILE
+[JobLauncher] job_key local
+adjusting batch_size to 1 due to subsampling 1.
+update tensorboard_logdir as runs/retri/youtube-jomi/run_0
+launching fairseq-train projects/retri/videoclip/youtube-jomi.yaml --user-dir mmpt --task mmtask --arch mmarch --criterion mmloss --tensorboard-logdir runs/retri/youtube-jomi/run_0 --log-interval 1000 --fp16 --num-workers 0 --batch-size 1 --lr 5e-05 --clip-norm 2.0 --optimizer adam --adam-betas '(0.9, 0.98)' --lr-scheduler polynomial_decay --total-num-update 1000000 --warmup-updates 1000 --weight-decay 0.0 --ddp-backend no_c10d --max-epoch 25 --save-dir runs/retri/youtube-jomi --save-interval-updates 1024 --keep-interval-updates 2 --keep-last-epochs 30

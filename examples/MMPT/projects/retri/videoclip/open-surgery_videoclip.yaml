@@ -33,11 +33,11 @@ fairseq:
     ddp_backend: no_c10d
     max_epoch: 8
   checkpoint:
-    restore_file: runs/retri/videoclip/pretrained_videoclip/checkpoint_best.pt
+    restore_file: runs/retri/youtube-jomi/checkpoint1.pt
     reset_optimizer: true
     reset_dataloader: true
     reset_meters: true
-    save_dir: runs/retri/videoclip/open-surgery-yt-ft-100
+    save_dir: runs/retri/open-surgery-yt/
 task_type: sweep_big
 model:
   model_cls: MMFusionSeparateActionSegmentation

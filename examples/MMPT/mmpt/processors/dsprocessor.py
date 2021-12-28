@@ -828,16 +828,38 @@ class YTJActionSegmentationMetaProcessor(MetaProcessor):
         "test": "testing",
     }
 
+    #id_label_map = {
+    #        1: "tying",
+    #        2: "suturing",
+          #  3: "cutting",
+    #}
     id_label_map = {
-            1: "tying",
-            2: "suturing",
-            3: "cutting",
+            1: "patient",
+            2: "incision",
+            3: "skin",
+            4: "tissue",
+            5: "artery",
+            6: "nerve",
+            7: "vein",
+            8: "surgery",
+            9: "bone"
     }
 
+    #label_id_map = {
+    #        "tying": 1,
+    #        "suturing": 2,
+          #  "cutting": 3,
+    #}
     label_id_map = {
-            "tying": 1,
-            "suturing": 2,
-            "cutting": 3,
+            "patient": 1,
+            "incision": 2,
+            "skin": 3,
+            "tissue": 4,
+            "artery": 5,
+            "nerve": 6,
+            "vein": 7,
+            "surgery": 8,
+            "bone": 9
     }
 
     def __init__(self, config):
@@ -879,7 +901,8 @@ class YTJActionSegmentationMetaProcessor(MetaProcessor):
                     label = int(YTJActionSegmentationMetaProcessor.label_id_map[segment["label"]])
                 except Exception as e:
                     print(e)
-                    label = int(YTJActionSegmentationMetaProcessor.label_id_map["background"])
+                    #label = int(YTJActionSegmentationMetaProcessor.label_id_map["background"])
+                    label = 0
                 starts.append(start)
                 ends.append(end)
                 labels.append(label)

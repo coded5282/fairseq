@@ -40,16 +40,16 @@ fairseq:
     warmup_updates: 1000
     weight_decay: 0.0
     ddp_backend: no_c10d
-    max_epoch: 25
+    max_epoch: 100
   checkpoint:
-    save_dir: runs/retri/youtube-jomi-non-overlap
+    save_dir: runs/retri/youtube-jomi
     save_interval_updates: 1024
     keep_interval_updates: 2
     keep_last_epochs: 30
 task_type: sweep_big
 slurm_config: big
 eval:
-  save_path: runs/retri/youtube-jomi-non-overlap
+  save_path: runs/retri/youtube-jomi
 model:
   model_cls: MMFusionSeparate
   mm_encoder_cls: null
